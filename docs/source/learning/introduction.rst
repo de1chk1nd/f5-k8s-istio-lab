@@ -16,4 +16,5 @@ Lab related content is stored in the **lab-setup** folder. Detailed explanation 
    :numbered:
    :maxdepth: 2
 
+   Introduction <introduction>
    Calico Overlay Network <calico>
