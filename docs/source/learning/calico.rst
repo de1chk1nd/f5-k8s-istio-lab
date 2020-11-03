@@ -22,14 +22,12 @@ To better understand the Calico SDN, I recommend to have a look into the video b
 
    <p><a href="https://www.tigera.io/video/tigera-calico-fundamentals?wvideo=1h2w5xt3sv"><img src="https://embed-fastly.wistia.com/deliveries/311b99bce1acb570911fb5b82dc839b8.jpg?image_play_button_size=2x&amp;image_crop_resized=960x540&amp;image_play_button=1&amp;image_play_button_color=54bbffe0" style="width: 400px; height: 225px;" width="400" height="225"></a></p><p><a href="https://www.tigera.io/video/tigera-calico-fundamentals?wvideo=1h2w5xt3sv">Tigera Calico - Architecture &amp; Networking Fundamentals Video | Tigera</a></p>
 
-.. admonition:: For the impatient ...
+.. admonition:: INFO
 
    00:52 - ~20:00 is the most important part
-
-
-.. admonition:: pro tipp ...
-
-      I used the general concept of this video session to "whiteboard" calico to my customers & partners ... usually it is well received, as the story unveils very good and is easy to follow and understand.
+   
+   
+   Use this whiteboard to show your peers how calico works - from my experience, it is very well received (as the story is very well structured).
 
 
 
