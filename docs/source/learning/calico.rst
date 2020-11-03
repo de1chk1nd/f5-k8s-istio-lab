@@ -50,7 +50,9 @@ Check if the nodes are up & ready::
   ip-10-1-1-6   Ready    <none>   159d   v1.13.4
 
 
-You should see 3 nodes - the master node and two worker nodes. Status must be :red:`"Ready"`
+You should see 3 nodes - the master node and two worker nodes. Status must be "Ready"
+
+
 
 .. toctree::
    :maxdepth: 2
