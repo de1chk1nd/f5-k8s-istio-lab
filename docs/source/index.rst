@@ -17,7 +17,7 @@ client    10.1.1.9  10.1.10.200  n/a
 ========  ========  ===========  ===========
 
 
-*Since MGMT IP is required by the lab by default, but not used in the lab, it will be ignored*
+*Since MGMT IP is required by the lab network, but not really used in our example, it will be ignored*
 
 
 .. image:: images/overview.png
