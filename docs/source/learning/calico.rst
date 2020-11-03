@@ -14,7 +14,7 @@ If you can not use UDF, and need a step-by-step introduction to get a basic lab 
 
 
 Calico SDN
-++++++++++
+----------
 
 To better understand the Calico SDN, I recommend to have a look into the video below - it was created by one of the developers from tigera and does a pretty good job in explaining the calico SDN. Basically everything is based on routing - so if you are, like me, a more network focused guy, you'll find this very easy, once the video is over.
 
@@ -44,7 +44,7 @@ Once basic installation ist done, calico default file is installed::
 
 
 Check Nodes
-+++++++++++
+-----------
 
 **From kubernetes master (10.1.10.20)**
 
