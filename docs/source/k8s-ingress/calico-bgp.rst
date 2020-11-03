@@ -1,15 +1,42 @@
 Calico BGP Set Up
 =================
 
-Login to kube-master and change to folder: **/home/ubuntu/k8s/calico/calicoctl**
+Login to kube-master via ssh.
+
+First and foremost update to current github repository::
+
+  ubuntu@kube-master:~$ /home/ubuntu/update_repo.sh
+  A    k8s
+  A    k8s/apps
+  A    k8s/apps/README.md
+  A    k8s/calico
+  A    k8s/calico/README.md
+  A    k8s/calico/calicoctl
+  A    k8s/calico/calicoctl/BGPConfiguration
+  A    k8s/calico/calicoctl/BGPPeer
+  A    k8s/istio
+  A    k8s/istio/README.md
+  Exported revision 54.
+
+
+The lenght of the list may vary, depending on the amout of scripts/files downloaded.
 
 You need to apply the BGP config from *BGPConfiguration* and also *BGPPeer* to set up the BGP config in k8s::
 
    #change folder to /home/ubuntu/k8s/calico/calicoctl
-   imish
+   cd /home/ubuntu/k8s/calico/calicoctl
 
-   #Switch to enable mode
-   enable
+   #copy & paste the config from BGPConfiguration into the CLI
+   cat BGPConfiguration
+   
+   #copy & paste the config from BGPPeer into the CLI
+   cat BGPPeer
+
+
+
+
+
+
 
    #Enter configuration mode
    config terminal
