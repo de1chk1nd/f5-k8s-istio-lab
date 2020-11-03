@@ -83,8 +83,8 @@ You should see clico PODs up & running, kube-proxy (one for each node) and DNS S
 
 .. toctree::
    :hidden:
+   :titlesonly:
    :caption: Chapter 1 - Information
-   :maxdepth: 1
 
    Introduction <learning/introduction>
    Calico <learning/calico>
