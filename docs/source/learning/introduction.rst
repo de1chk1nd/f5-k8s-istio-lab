@@ -51,4 +51,9 @@ Windows 10 basic OS with Google Chrome.
 
 
 
-..toctree::
+.. toctree::
+   :hidden:
+   :caption: Chapter 1 - Information
+
+   Introduction <learning/introduction>
+   Calico <learning/calico>
