@@ -1,5 +1,5 @@
-ISTIO
-=====
+Kubernetes
+==========
 
 
 .. toctree::
