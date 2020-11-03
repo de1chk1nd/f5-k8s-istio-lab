@@ -62,9 +62,6 @@ The output should be similar to this::
 
 
 
-
-
-
 .. toctree::
    :numbered:
    :hidden:
