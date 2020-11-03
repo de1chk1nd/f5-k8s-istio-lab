@@ -1,5 +1,7 @@
-Welcome to my new kubernetes lab based on calico
-================================================
+Kubernetes Training Lab
+=======================
+
+
 
 WIP
 
@@ -8,6 +10,7 @@ WIP
    :numbered:
    :maxdepth: 2
    :caption: Introduction & Pre-Reading
+   Welcome <index>
 
 .. toctree::
    :numbered:
