@@ -71,10 +71,11 @@ From that point on, infrastrucure needs to be initialized (calico service, app d
 .. toctree::
    :numbered:
    :maxdepth: 2
-   :caption: Chapter 2 - Finish Calico set up
+   :caption: Chapter 2 - kubernetes ingress
 
 
 .. toctree::
    :numbered:
    :maxdepth: 2
-   :caption: Chapter 3 - Container Ingress Service
+   :caption: Chapter 3 - istio
+   introduction <istio/introduction>
