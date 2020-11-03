@@ -83,8 +83,8 @@ We have 3 routes announced via BGP:
 Each k8s node is running a certain amount of pods - these pods have an 192.168.*.* IP assigned.
 
 
-Calico SDN
-//////////
+**Calico SDN**
+
 
 .. admonition:: IMPORTANT!
 
