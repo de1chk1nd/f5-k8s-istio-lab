@@ -3,6 +3,8 @@ Kubernetes Training Lab
 
 Welcome to my Lab Guide for integrating F5 Container Ingress Services with k8s and Calico as CNI.
 
+**Purpose:** This lab is for getting familiar and test basic kubernetes ingress services and start working with istio service mesh - from a f5 point of view (bigip CIS & NGINX Ingress).
+
 The lab has following basic set up:
 
 ========  ========  ===========  ===========
@@ -45,9 +47,9 @@ The infrastructure is set up (VLANs and IPs) and basic kubernetes installation i
 From that point on, infrastrucure needs to be initialized (calico service, app deplyoments, services, ...).
 
 
-| * **Chapter 1** focuses on basic information about the lab, kubernetes, calico and so on.
+|* **Chapter 1** focuses on basic information about the lab, kubernetes, calico and so on.
 | 
-| * **Chapter 2** finishes the calico installation and basic BGP set up
+|* **Chapter 2** finishes the calico installation and basic BGP set up
 | 
 |  * **Chapter 2.1** shows how to deploy basic kubernetes ingress services and auto-configure the bigip (Contianer Ingress Service - CIS)
 |
@@ -55,7 +57,7 @@ From that point on, infrastrucure needs to be initialized (calico service, app d
 |
 |  * **Chapter 2.3** advance usage of F5 and NGINX Ingress Services
 |
-| * **Chapter 3** installs ISTIO and uses f5 for external facing services
+|* **Chapter 3** installs ISTIO and uses f5 for external facing services
 |
 
 
