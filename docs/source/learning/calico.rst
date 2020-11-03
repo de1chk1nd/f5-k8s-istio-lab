@@ -26,7 +26,7 @@ To better understand the Calico SDN, I recommend to have a look into the video b
 
    00:52 - ~20:00 is the most important part
    
-   
+
    Use this whiteboard to show your peers how calico works - from my experience, it is very well received (as the story is very well structured).
 
 
@@ -82,4 +82,4 @@ You should see clico PODs up & running, kube-proxy (one for each node) and DNS S
 
 
 .. toctree::
-   :maxdepth: 2
+   :titlesonly:

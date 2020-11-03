@@ -51,9 +51,7 @@ Windows 10 basic OS with Google Chrome.
 
 
 .. toctree::
-   :numbered:
-   :maxdepth: 2
-   :hidden:
+   :titlesonly:
 
    Introduction <introduction>
    Calico Overlay Network <calico>
