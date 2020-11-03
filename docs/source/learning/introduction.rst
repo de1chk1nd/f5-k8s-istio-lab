@@ -11,12 +11,14 @@ Everything important is stored on github:  `github repo <https://github.com/de1c
 
 Lab related content is stored in the **lab-setup** folder. Detailed explanation will be provided in the labs later on.
 
+
+
 F5 BigIP
 --------
 
 F5 BigIP is more or less in default set up. VLANs and VLAN Network IPs were assigned. Current Supported AS3 version is installed.
 
-Currentl license supports:
+Current installed license supports:
 
 * LTM
 * Routing Bundle
@@ -24,11 +26,16 @@ Currentl license supports:
 * aWAF
 
 
+
 Kubernetes Master & Worker Nodes
 --------------------------------
 
 Kubernetes Nodes were installed with ubuntu 18.04 server. 
-Packet repository and disstribution packages were updated. Finally current supported docker & kubernetes packages were installed a basic cluster was set up.
+
+Packet repository and disstribution packages were updated.
+
+Finally current supported docker & kubernetes packages were installed a basic cluster was set up.
+
 
 
 Windows Jumphost
@@ -37,10 +44,12 @@ Windows Jumphost
 Windows 10 basic OS with Google Chrome.
 
 
+
 Windows Client
 --------------
 
 Windows 10 basic OS with Google Chrome.
+
 
 
 .. toctree::
