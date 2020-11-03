@@ -65,7 +65,6 @@ From that point on, infrastrucure needs to be initialized (calico service, app d
 
 .. toctree::
    :numbered:
-   :maxdepth: 2
    :hidden:
    :caption: Chapter 1 - Information
 
@@ -74,7 +73,6 @@ From that point on, infrastrucure needs to be initialized (calico service, app d
 
 .. toctree::
    :numbered:
-   :maxdepth: 2
    :hidden:
    :caption: Chapter 2 - kubernetes ingress
 
@@ -83,7 +81,6 @@ From that point on, infrastrucure needs to be initialized (calico service, app d
 
 .. toctree::
    :numbered:
-   :maxdepth: 2
    :hidden:
    :caption: Chapter 3 - istio
    
