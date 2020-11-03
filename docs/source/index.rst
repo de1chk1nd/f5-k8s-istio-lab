@@ -67,6 +67,7 @@ From that point on, infrastrucure needs to be initialized (calico service, app d
    :caption: Chapter 1 - Information
 
    Introduction <learning/introduction>
+   Calico <learning/calico>
 
 
 .. toctree::
