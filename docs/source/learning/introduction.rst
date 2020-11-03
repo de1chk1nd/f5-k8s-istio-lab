@@ -53,7 +53,7 @@ Windows 10 basic OS with Google Chrome.
 
 .. toctree::
    :hidden:
-   :titlesonly:
+   :maxdepth: 1
    :caption: Chapter 1 - Information
 
    Introduction <learning/introduction>
