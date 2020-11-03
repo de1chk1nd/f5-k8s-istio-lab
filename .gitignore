@@ -1,5 +1,6 @@
 # Build and Release Folders
 
+/_admin/
 /docs/build/
 /docs/source/images/visio/
 /docs/source/_templates/
