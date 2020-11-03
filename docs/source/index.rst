@@ -49,12 +49,16 @@ From that point on, infrastrucure needs to be initialized (calico service, app d
 | 
 | **Chapter 2** finishes the calico installation and basic BGP set up
 | 
-| **Chapter 3** shows how to deploy basic kubernetes ingress services and auto-configure the bigip (Contianer Ingress Service - CIS)
+| **Chapter 2.1** shows how to deploy basic kubernetes ingress services and auto-configure the bigip (Contianer Ingress Service - CIS)
 |
-| **Chapter 4** shows how to integrate NGINX Ingress Services and use f5 CIS-NGINX Controller to use f5 big ip and nginx ingress (Project Chimera)
+| **Chapter 2.2** shows how to integrate NGINX Ingress Services and use f5 CIS-NGINX Controller to use f5 big ip and nginx ingress (Project Chimera)
 |
-| **Chapter 5** advance usage of F5 and NGINX Ingress Services
+| **Chapter 2.3** advance usage of F5 and NGINX Ingress Services
 |
+| **Chapter 3** installs ISTIO and uses f5 for external facing services
+|
+
+
 
 
 .. toctree::
