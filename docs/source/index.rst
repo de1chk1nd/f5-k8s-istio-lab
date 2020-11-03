@@ -78,6 +78,7 @@ From that point on, infrastrucure needs to be initialized (calico service, app d
    :caption: Chapter 2 - kubernetes ingress
 
    Introduction <k8s-ingress/introduction>
+   Calico - BGP <k8s-ingress/calico-bgp>
 
 
 .. toctree::

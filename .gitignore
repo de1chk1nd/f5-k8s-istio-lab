@@ -1,5 +1,6 @@
 # Build and Release Folders
 
+/.vscode/
 /_admin/
 /docs/build/
 /docs/source/images/visio/
