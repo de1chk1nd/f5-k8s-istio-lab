@@ -1,3 +1,18 @@
+.. raw:: html
+
+   <style> .red {color:red}; font-weight:bold </style>
+
+.. role:: red
+
+
+.. raw:: html
+
+   <style> .blue {color:blue}; font-weight:bold </style>
+
+.. role:: blue
+
+
+
 F5 BigIP BGP Set Up
 ===================
 
@@ -9,7 +24,6 @@ We will use our self IPs on the internal network. Therefore we need to make sure
 
 You need to allow BGP on the default route domain 0 on your BIG-IPs. 
 Connect to the BIG-IP GUI on go into Network > Route domain. Click on Route Domain "0" and allow BGP.
-
 
 ========  ========  ==========
  Device   Username   Password
