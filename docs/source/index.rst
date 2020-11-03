@@ -73,7 +73,6 @@ From that point on, infrastrucure needs to be initialized (calico service, app d
 
 
 .. toctree::
-   :numbered:
    :hidden:
    :caption: Chapter 2 - kubernetes ingress
 
