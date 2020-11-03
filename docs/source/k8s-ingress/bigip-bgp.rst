@@ -10,7 +10,7 @@ We will use our self IPs on the internal network. Therefore we need to make sure
 You need to allow BGP on the default route domain 0 on your BIG-IPs. 
 Connect to the BIG-IP GUI on go into Network > Route domain. Click on Route Domain "0" and allow BGP.
 
-.. image:: images/RD_bgp.jpg
+.. image:: ../images/RD_bgp.jpg
    :width: 400
    :alt: Lab Overview
    :align: center
