@@ -65,6 +65,7 @@ From that point on, infrastrucure needs to be initialized (calico service, app d
    :numbered:
    :maxdepth: 2
    :caption: Chapter 1 - Information
+
    Welcome <index>
 
 
@@ -72,6 +73,7 @@ From that point on, infrastrucure needs to be initialized (calico service, app d
    :numbered:
    :maxdepth: 2
    :caption: Chapter 2 - kubernetes ingress
+
    Introduction <k8s-ingress/introduction.rst>
 
 
@@ -79,4 +81,5 @@ From that point on, infrastrucure needs to be initialized (calico service, app d
    :numbered:
    :maxdepth: 2
    :caption: Chapter 3 - istio
+   
    Introduction <istio/introduction>
