@@ -58,3 +58,4 @@ Windows 10 basic OS with Google Chrome.
 
    Introduction <learning/introduction>
    Calico <learning/calico>
+   ISTIO <learning/istio>
