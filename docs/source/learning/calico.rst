@@ -36,6 +36,15 @@ To better understand the Calico SDN, I recommend to have a look into the video b
 Check if all required services are running
 ------------------------------------------
 
+Once basic installation ist done, calico default file is installed::
+
+   kubectl apply -f https://docs.projectcalico.org/manifests/calico.yaml
+
+.. admonition:: Calico already installed
+
+   In preperation for this lab, calico is already installed. No need to install this packet, now!
+
+
 Check Nodes
 +++++++++++
 
@@ -43,14 +52,34 @@ Check Nodes
 
 Check if the nodes are up & ready::
 
-  ubuntu@ip-10-1-1-4:~/tmp$ kubectl get nodes
-  NAME          STATUS   ROLES    AGE    VERSION
-  ip-10-1-1-4   Ready    master   159d   v1.13.4
-  ip-10-1-1-5   Ready    <none>   159d   v1.13.4
-  ip-10-1-1-6   Ready    <none>   159d   v1.13.4
+   ubuntu@kube-master:~$ kubectl get nodes
+   NAME            STATUS   ROLES    AGE   VERSION
+   kube-master     Ready    master   13m   v1.18.10
+   kube-worker-1   Ready    <none>   36s   v1.18.10
+   kube-worker-2   Ready    <none>   22s   v1.18.10
 
 
 You should see 3 nodes - the master node and two worker nodes. Status must be "Ready"
+
+Check runnung PODs::
+
+   ubuntu@kube-master:~$ kubectl get pods --all-namespaces
+   NAMESPACE     NAME                                       READY   STATUS    RESTARTS   AGE
+   kube-system   calico-kube-controllers-7567d8d9dd-x7dz9   1/1     Running   0          2m10s
+   kube-system   calico-node-2mdp2                          1/1     Running   0          66s
+   kube-system   calico-node-gmhbl                          1/1     Running   0          80s
+   kube-system   calico-node-zp9jh                          1/1     Running   0          2m10s
+   kube-system   coredns-66bff467f8-fdxkf                   1/1     Running   1          13m
+   kube-system   coredns-66bff467f8-s54hj                   1/1     Running   1          13m
+   kube-system   etcd-kube-master                           1/1     Running   1          14m
+   kube-system   kube-apiserver-kube-master                 1/1     Running   1          14m
+   kube-system   kube-controller-manager-kube-master        1/1     Running   1          14m
+   kube-system   kube-proxy-dwzxh                           1/1     Running   1          13m
+   kube-system   kube-proxy-wc5wz                           1/1     Running   0          66s
+   kube-system   kube-proxy-x8kp8                           1/1     Running   0          80s
+   kube-system   kube-scheduler-kube-master                 1/1     Running   1          14m
+
+You should see clico PODs up & running, kube-proxy (one for each node) and DNS Services up & running.
 
 
 

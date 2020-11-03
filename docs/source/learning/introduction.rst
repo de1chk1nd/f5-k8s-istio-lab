@@ -42,14 +42,12 @@ Windows Jumphost
 ----------------
 
 Windows 10 basic OS with Google Chrome.
-|
 
 
 Windows Client
 --------------
 
 Windows 10 basic OS with Google Chrome.
-|
 
 
 .. toctree::
