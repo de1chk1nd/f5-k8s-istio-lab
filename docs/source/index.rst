@@ -60,26 +60,27 @@ From that point on, infrastrucure needs to be initialized (calico service, app d
 
 
 
+.. toctree::
+   :numbered:
+   :maxdepth: 2
+   :caption: Chapter 1 - Information & Pre Reading
+
+   Introduction <learning/introduction>
+
 
 .. toctree::
    :numbered:
    :maxdepth: 2
-   :caption: Chapter 1 - Information
-
-   Welcome <index>
-
-
-.. toctree::
-   :numbered:
-   :maxdepth: 2
+   :hidden:
    :caption: Chapter 2 - kubernetes ingress
 
-   Introduction <k8s-ingress/introduction.rst>
+   Introduction <k8s-ingress/introduction>
 
 
 .. toctree::
    :numbered:
    :maxdepth: 2
+   :hidden:
    :caption: Chapter 3 - istio
    
    Introduction <istio/introduction>
