@@ -16,7 +16,9 @@ jumphost  10.1.1.8  n/a          10.1.20.200
 client    10.1.1.9  10.1.10.200  n/a
 ========  ========  ===========  ===========
 
+
 *Since MGMT IP is required by the lab by default, but not used in the lab, it will be ignored*
+
 
 .. image:: images/overview.png
    :width: 400
@@ -25,21 +27,43 @@ client    10.1.1.9  10.1.10.200  n/a
 
 
 
-WIP
+The lab runs currently on:
 
+* TMOS 15.1
+   * AS3 XYZ
+
+* Ubuntu 18.04
+   * kubernetes 18.
+
+The infrastructure is set up (VLANs and IPs) and basic kubernetes installation is completed.
+
+.. warning::
+   
+   Since it is important for initilazing the calico sdn, please be aware, that k8s was initialized with *"--pod-network-cidr=192.168.0.0/16"*
+
+
+From that point on, infrastrucure needs to be initialized (calico service, app deplyoments, services, ...).
+
+
+| **Chapter 1** focuses on basic information about the lab, kubernetes, calico and so on.
+| 
+| **Chapter 2** finishes the calico installation and basic BGP set up
+| 
+| **Chapter 3** shows how to deploy basic kubernetes ingress services and auto-configure the bigip (Contianer Ingress Service - CIS)
+|
 
 .. toctree::
    :numbered:
    :maxdepth: 2
-   :caption: Introduction & Pre-Reading
+   :caption: Chapter 1 - Information
    Welcome <index>
 
 .. toctree::
    :numbered:
    :maxdepth: 2
-   :caption: Setting up the lab
+   :caption: Chapter 2 - Finish Calico set up
 
 .. toctree::
    :numbered:
    :maxdepth: 2
-   :caption: Deploy Services
+   :caption: Chapter 3 - Container Ingress Service
