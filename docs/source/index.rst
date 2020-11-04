@@ -74,12 +74,20 @@ From that point on, infrastrucure needs to be initialized (calico service, app d
 
 .. toctree::
    :hidden:
-   :caption: Chapter 2 - kubernetes ingress
+   :caption: Chapter 2 - set up BGP
+
+   Introduction <BGP/introduction>
+   Calico - BGP <BGP/calico-bgp>
+   F5 BigIP - BGP <BGP/bigip-bgp>
+   BGP - Verification <BGP/bgp-verify>
+
+
+.. toctree::
+   :hidden:
+   :caption: Chapter 3 - set up BGP
 
    Introduction <k8s-ingress/introduction>
-   Calico - BGP <k8s-ingress/calico-bgp>
-   F5 BigIP - BGP <k8s-ingress/bigip-bgp>
-   BGP - Verification <k8s-ingress/bgp-verify>
+   Container Ingress Service <k8s-ingress/cis>
 
 
 .. toctree::
