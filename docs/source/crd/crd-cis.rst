@@ -116,3 +116,4 @@ As said before - we need to deploy the controller with **--custom-resource-mode=
    Introduction <crd/introduction>
    New CIS Instance <crd/crd-cis>
    Import CRD Definition <crd/crd-crd>
+   Create Services <crd/crd-deploy>

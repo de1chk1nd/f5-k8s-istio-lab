@@ -38,3 +38,5 @@ Definition from clouddocs.f5.com:
    Introduction <crd/introduction>
    New CIS Instance <crd/crd-cis>
    Import CRD Definition <crd/crd-crd>
+   Create Services <crd/crd-deploy>
+   
