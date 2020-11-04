@@ -52,7 +52,7 @@ Deploy the shared-ingress-1.yaml service::
     ubuntu@kube-master:~/k8s/basic-ingress$ kubectl apply -f shared-ingress-1.yaml
     ingress.extensions/sharedingress1 created
 
-Check the Routing Policy - and compare it with the .yaml config file::
+Check the LTM Routing Policy - and compare it with the .yaml config file::
 
         spec:
         rules:
@@ -92,6 +92,39 @@ Host-Routung
 ++++++++++++
 
 
+* deploy shared-ingress-2.yaml service::
+
+    ubuntu@kube-master:~/k8s/basic-ingress$ kubectl apply -f shared-ingress-2.yaml
+    ingress.extensions/sharedingress2 created
+
+    ubuntu@kube-master:~/k8s/basic-ingress$ kubectl get ingress
+    NAME             CLASS    HOSTS                                  ADDRESS      PORTS   AGE
+    sharedingress2   <none>   coffee.shared-1.com,tea.shared-1.com   10.1.10.82   80      25s
+
+
+Check the LTM Routing Policy - and compare it with the .yaml config file::
+
+    - host: coffee.shared-1.com
+        http:
+        paths:
+        - path: /
+            backend:
+            serviceName: coffee-svc
+            servicePort: 80
+    - host: tea.shared-1.com
+        http:
+        paths:
+        - path: /
+            backend:
+            serviceName: tea-svc
+            servicePort: 80
+
+Compare to:
+
+.. image:: ../images/host-l7routing-2.PNG
+   :width: 800
+   :alt: Lab Overview
+   :align: center
 
 
 
