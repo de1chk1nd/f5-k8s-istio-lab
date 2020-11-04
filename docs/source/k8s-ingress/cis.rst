@@ -101,7 +101,8 @@ Finally check, if the controller is running::
       kube-proxy-x8kp8                            1/1     Running   2          12h
       kube-scheduler-kube-master                  1/1     Running   3          12h
 
-You should see **k8s-bigip-ctlr-deployment-**<POD-ID>.
+
+You should see **k8s-bigip-ctlr-deployment**-<POD-ID>.
 
 To check the config files online, please go :download:`github repo <https://github.com/de1chk1nd/F5k8sCalicoLab/blob/main/k8s/cis/002_setup_cis_bigip.yaml>`
 
