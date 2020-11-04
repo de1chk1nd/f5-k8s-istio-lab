@@ -38,6 +38,8 @@ Now scale your application::
     deployment.apps/coffee scaled
 
 
+And check the Pool-Member again:
+
 .. image:: ../images/after_scale.PNG
    :width: 400
    :alt: Lab Overview
