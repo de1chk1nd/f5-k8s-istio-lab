@@ -35,7 +35,7 @@ Virtual Server:
 .. image:: ../images/crd-vs.PNG
    :width: 400
    :alt: Lab Overview
-   :align: left
+   :align: center
 
 
 LTM Policy:
@@ -43,7 +43,7 @@ LTM Policy:
 .. image:: ../images/crd-LTMpol.PNG
    :width: 400
    :alt: Lab Overview
-   :align: left
+   :align: center
 
 
 and Pool-Member:
@@ -51,7 +51,7 @@ and Pool-Member:
 .. image:: ../images/crd-pool.PNG
    :width: 400
    :alt: Lab Overview
-   :align: left
+   :align: center
 
 
 When finished with analyzing and testing the service, delete the CRD, again.
@@ -93,7 +93,7 @@ Virtual Server:
 .. image:: ../images/crd-tls-vs.PNG
    :width: 400
    :alt: Lab Overview
-   :align: left
+   :align: center
 
 
 LTM SSL Profile:
@@ -101,7 +101,7 @@ LTM SSL Profile:
 .. image:: ../images/crd-tls-cssl.PNG
    :width: 400
    :alt: Lab Overview
-   :align: left
+   :align: center
 
 
 When done, delete virtualserver and tlsprofile::
