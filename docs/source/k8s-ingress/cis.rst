@@ -82,6 +82,29 @@ Finally apply the CIS controller.
 
    kubectl apply -f  cis_deploy.yaml
 
+Finally check, if the controller is running::
+
+      ubuntu@kube-master:~$ kubectl get pods -n kube-system
+      NAME                                        READY   STATUS    RESTARTS   AGE
+      calico-kube-controllers-7567d8d9dd-x7dz9    1/1     Running   2          12h
+      calico-node-2mdp2                           1/1     Running   2          12h
+      calico-node-gmhbl                           1/1     Running   2          12h
+      calico-node-zp9jh                           1/1     Running   2          12h
+      coredns-66bff467f8-fdxkf                    1/1     Running   3          12h
+      coredns-66bff467f8-s54hj                    1/1     Running   3          12h
+      etcd-kube-master                            1/1     Running   3          12h
+      k8s-bigip-ctlr-deployment-b8649597f-76xr5   1/1     Running   3          8h
+      kube-apiserver-kube-master                  1/1     Running   3          12h
+      kube-controller-manager-kube-master         1/1     Running   3          12h
+      kube-proxy-dwzxh                            1/1     Running   3          12h
+      kube-proxy-wc5wz                            1/1     Running   2          12h
+      kube-proxy-x8kp8                            1/1     Running   2          12h
+      kube-scheduler-kube-master                  1/1     Running   3          12h
+
+You should see **k8s-bigip-ctlr-deployment-**<POD-ID>.
+
+To check the config files online, please go :download:`github repo <https://github.com/de1chk1nd/F5k8sCalicoLab/blob/main/k8s/cis/002_setup_cis_bigip.yaml>`
+
 
 .. toctree::
    :numbered:
