@@ -11,7 +11,7 @@ spec:
   host: cafe.de1chk1nd.de
   pools:
   - path: /coffee
-    service: coffee-svc
+    service-name: coffee-svc
     servicePort: 80
     monitor:
       type: http
@@ -20,7 +20,7 @@ spec:
       interval: 10
       timeout: 10
   - path: /tea
-    service: tea-svc
+    service-name: tea-svc
     servicePort: 80
     monitor:
       type: http

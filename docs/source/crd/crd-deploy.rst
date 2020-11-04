@@ -8,17 +8,21 @@ Deploy Apps
 
 * Deploy *simple_http.yaml* Service::
 
-    ubuntu@ip-10-1-1-4:~/k8s/crd$ kubectl apply -f 004a_crd_simple_http.yaml
-    virtualserver.cis.f5.com/tea-virtual-server created
+    ubuntu@kube-master:~/k8s/crd$ kubectl apply -f simple_http.yaml
+    virtualserver.cis.f5.com/cafe-virtual-server created
 
-dsd
 
-Check Service in k8s::
+* Verify if the service is running::
 
-   ubuntu@ip-10-1-1-4:~/k8s/crd$ kubectl get VirtualServer
-   NAME                 AGE
-   tea-virtual-server   93s
+    ubuntu@kube-master:~/k8s/crd$ kubectl get virtualserver
+    NAME                  AGE
+    cafe-virtual-server   10s
 
+
+Now check if the CRD is applied to the bigip successfully.
+
+
+ 
 
 .. toctree::
    :hidden:
