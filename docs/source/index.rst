@@ -88,6 +88,7 @@ From that point on, infrastrucure needs to be initialized (calico service, app d
 
    Introduction <k8s-ingress/introduction>
    Container Ingress Service <k8s-ingress/cis>
+   Basic Ingress <k8s-ingress/basic-ingress>
 
 
 .. toctree::
