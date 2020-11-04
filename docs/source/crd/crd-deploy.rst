@@ -48,6 +48,12 @@ and Pool-Member:
    :align: center
 
 
+* Now delete the service again::
+
+    ubuntu@kube-master:~/k8s/crd$ kubectl delete virtualserver cafe-virtual-server
+    virtualserver.cis.f5.com "cafe-virtual-server" deleted
+
+
 
 Simple HTTPs Service
 ++++++++++++++++++++
