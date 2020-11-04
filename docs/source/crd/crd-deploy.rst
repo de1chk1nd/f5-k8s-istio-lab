@@ -58,8 +58,17 @@ and Pool-Member:
 Simple HTTPs Service
 ++++++++++++++++++++
 
-WIP
- 
+* Deploy *TLSprofile.yaml* Service::
+
+    ubuntu@kube-master:~/k8s/crd$ kubectl apply -f TLSprofile.yaml
+
+
+* Deploy *simple_https.yaml* Service::
+
+    ubuntu@kube-master:~/k8s/crd$ kubectl apply -f simple_https.yaml
+
+
+
 
 .. toctree::
    :hidden:
