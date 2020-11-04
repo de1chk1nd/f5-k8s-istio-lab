@@ -75,6 +75,34 @@ Simple HTTPs Service
     virtualserver.cis.f5.com/cafe-virtual-server created
 
 
+Now check if the CRD is applied to the bigip successfully.
+
+Virtual Server:
+
+.. image:: ../images/crd-vs.PNG
+   :width: 400
+   :alt: Lab Overview
+   :align: center
+
+
+LTM Policy:
+
+.. image:: ../images/crd-LTMpol.PNG
+   :width: 400
+   :alt: Lab Overview
+   :align: center
+
+
+and Pool-Member:
+
+.. image:: ../images/crd-pool.PNG
+   :width: 400
+   :alt: Lab Overview
+   :align: center
+
+
+
+
 .. toctree::
    :hidden:
    :caption: Chapter 5 - Custom Ressource Definition
