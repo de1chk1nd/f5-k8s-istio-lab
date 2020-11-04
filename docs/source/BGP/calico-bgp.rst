@@ -65,7 +65,7 @@ The output should be similar to this::
 .. toctree::
    :numbered:
    :hidden:
-   :caption: Chapter 2 - kubernetes ingress
+   :caption: Chapter 2 - set up BGP
 
    Introduction <BGP/introduction>
    Calico - BGP <BGP/calico-bgp>

@@ -84,7 +84,7 @@ From that point on, infrastrucure needs to be initialized (calico service, app d
 
 .. toctree::
    :hidden:
-   :caption: Chapter 3 - set up BGP
+   :caption: Chapter 3 - Ingress Service
 
    Introduction <k8s-ingress/introduction>
    Container Ingress Service <k8s-ingress/cis>
@@ -93,6 +93,6 @@ From that point on, infrastrucure needs to be initialized (calico service, app d
 .. toctree::
    :numbered:
    :hidden:
-   :caption: Chapter 3 - istio
+   :caption: Chapter 4 - istio
    
    Introduction <istio/introduction>

@@ -78,7 +78,7 @@ Run the following commands::
 .. toctree::
    :numbered:
    :hidden:
-   :caption: Chapter 2 - kubernetes ingress
+   :caption: Chapter 2 - set up BGP
 
    Introduction <BGP/introduction>
    Calico - BGP <BGP/calico-bgp>
