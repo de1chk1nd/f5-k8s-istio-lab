@@ -161,6 +161,7 @@ Virtual Server:
 
 Ingress Service created on F5.
 
+
 Check the SSL Profile:
 
 .. image:: ../images/basic-tls-ingress-tea-cssl2.PNG
@@ -169,7 +170,21 @@ Check the SSL Profile:
    :align: center
 
 
+We can see a "custom" LTM Profile attahed. You can go ahead and examine the cert/profile. For the purpose of this lab, we'll go ahead and check else has been added.
+Check what happend with the "Host" port of the definition:
 
+.. image:: ../images/host-routing1.PNG
+   :width: 400
+   :alt: Lab Overview
+   :align: center
+
+
+An LTM Policy was added - and within that policy, we check for the HTTP Host header and route traffic accordingly:
+
+.. image:: ../images/host-routing2.PNG
+   :width: 400
+   :alt: Lab Overview
+   :align: center
 
 
 .. toctree::
