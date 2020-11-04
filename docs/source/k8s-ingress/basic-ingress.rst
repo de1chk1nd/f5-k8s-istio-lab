@@ -157,5 +157,6 @@ All this was monitored by the f5 CIS controller and dynamically updated on the b
    :caption: Chapter 3 - Ingress Service
 
    Introduction <k8s-ingress/introduction>
-   Calico - BGP <k8s-ingress/cis>
-   F5 BigIP - BGP <k8s-ingress/basic-ingress>
+   Container Ingress Service <k8s-ingress/cis>
+   Basic Ingress <k8s-ingress/basic-ingress>
+   Basic Ingress - TLS <k8s-ingress/basic-ingress-tls>
