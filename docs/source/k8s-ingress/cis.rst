@@ -8,21 +8,25 @@ Container Ingress Service
 ========  ========  ==========
 
 
-* First change folder to XXX::
+* First change folder to  k8s/calico/CIS/::
 
-   cd /r
+   cd k8s/calico/CIS/
+
 
 * Create BigIP Login::
    
    kubectl create secret generic bigip-login -n kube-system --from-literal=username=admin --from-literal=password=f5twister!
 
+
 * Create a service account for deploying CIS::
 
-   kubectl create serviceaccount k8s-bigip-ctlr -n kube-system
+   kubectl create serviceaccount bigip-ctlr -n kube-system
+
 
 * Create a Cluster Role and Cluster Role Binding on the Kubernetes Cluster using the examples below::
 
    kubectl apply -f  k8s_rbac.yaml
+
 
 * Create a CIS deployment using cis_deploy.yaml as shown below::
 
