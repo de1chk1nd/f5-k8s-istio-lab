@@ -92,10 +92,21 @@ From that point on, infrastrucure needs to be initialized (calico service, app d
    Basic Ingress - TLS <k8s-ingress/basic-ingress-tls>
    Basic Ingress - L7 Routing <k8s-ingress/basic-ingress-l7-route>
 
+.. toctree::
+   :hidden:
+   :caption: Chapter 4 - AS3 / Config-Map
+
+   Introduction <as3/introduction>
+
+.. toctree::
+   :hidden:
+   :caption: Chapter 5 - Custom Ressource Definition
+
+   Introduction <crd/introduction>
 
 .. toctree::
    :numbered:
    :hidden:
-   :caption: Chapter 4 - istio
+   :caption: Chapter 6 - istio
    
    Introduction <istio/introduction>
