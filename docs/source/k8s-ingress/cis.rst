@@ -14,7 +14,7 @@ Container Ingress Service
 
 * Create BigIP Login::
    
-   kubectl create secret generic bigip-login -n kube-system --from-literal=username=admin --from-literal=password=<password>
+   kubectl create secret generic bigip-login -n kube-system --from-literal=username=admin --from-literal=password=f5twister!
 
 * Create a service account for deploying CIS::
 
