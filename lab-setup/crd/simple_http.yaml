@@ -12,7 +12,7 @@ spec:
   pools:
   - path: /coffee
     service: coffee-svc
-    servicePort: 80
+    servicePort: 8080
     monitor:
       type: http
       send: “GET /rn”
@@ -21,7 +21,7 @@ spec:
       timeout: 10
   - path: /tea
     service: tea-svc
-    servicePort: 80
+    servicePort: 8080
     monitor:
       type: http
       send: “GET /rn”
