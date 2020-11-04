@@ -2,7 +2,7 @@ Layer-7 Ingress Routing
 =======================
 
 In this lab we'll check how Layer-7 Routing works.
-For this we set up 3 Ingress Ressources - all using the same IP and adding a host part (similar to the on used in TLS - local secret cert).
+For this we set up several Ingress Ressources - all using the same IP and/ using paths to route traffic.
 
 First and foremost update to current github repository (if not already done)::
 
@@ -27,6 +27,7 @@ The lenght of the list may vary, depending on the amout of scripts/files downloa
         NAME             CLASS    HOSTS                 ADDRESS      PORTS     AGE
         singleingress1   <none>   *                     10.1.10.80   80        10h
         singleingress2   <none>   www.adv-ingress.com   10.1.10.81   80, 443   16m
+        
         ubuntu@kube-master:~/k8s/basic-ingress$ kubectl delete ingress singleingress1
         ingress.extensions "singleingress1" deleted
         ubuntu@kube-master:~/k8s/basic-ingress$ kubectl delete ingress singleingress2
@@ -42,6 +43,9 @@ The lenght of the list may vary, depending on the amout of scripts/files downloa
 * Change folder to /home/ubuntu/k8s/basic-ingress::
 
     cd /home/ubuntu/k8s/basic-ingress
+
+L7 Routung
+++++++++++
 
 Deploy the shared-ingress-1.yaml service::
 
@@ -71,6 +75,24 @@ Compare to:
    :width: 800
    :alt: Lab Overview
    :align: center
+
+When finished, delete ingress delclaration::
+
+        ubuntu@kube-master:~/k8s/basic-ingress$ kubectl get ingress
+        NAME             CLASS    HOSTS              ADDRESS      PORTS   AGE
+        sharedingress1   <none>   www.shared-1.com   10.1.10.82   80      3m36s
+        
+        ubuntu@kube-master:~/k8s/basic-ingress$ kubectl delete ingress sharedingress1
+        ingress.extensions "sharedingress1" deleted
+        ubuntu@kube-master:~/k8s/basic-ingress$
+
+
+
+Host-Routung
+++++++++++++
+
+
+
 
 
 .. toctree::
