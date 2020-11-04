@@ -97,6 +97,7 @@ From that point on, infrastrucure needs to be initialized (calico service, app d
    :caption: Chapter 4 - AS3 / Config-Map
 
    Introduction <as3/introduction>
+   Config Map <as3/config-map>
 
 .. toctree::
    :hidden:
