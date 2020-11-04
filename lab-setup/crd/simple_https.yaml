@@ -8,7 +8,7 @@
  spec:
    host: cafe.de1chk1nd.de
    tlsProfileName: edge-tls.  # --> This will attach reencrypt-tls TLSProfile
-   virtualServerAddress: "172.16.3.4"
+   virtualServerAddress: "10.1.10.84"
    pools:
    - path: /coffee
      service: coffee-svc
