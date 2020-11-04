@@ -1,7 +1,7 @@
 AS3 -- Config Maps Introduction
 ===============================
 
-WIP
+
 
 
 .. toctree::
