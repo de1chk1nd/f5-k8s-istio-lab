@@ -41,9 +41,9 @@ spec:
             # https://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/latest
             "--bigip-username=$(BIGIP_USERNAME)",
             "--bigip-password=$(BIGIP_PASSWORD)",
-            "--bigip-url=<ip_address-or-hostname>",
-            "--bigip-partition=<name_of_partition>",
-            "--pool-member-type=nodeport",
+            "--bigip-url=10.1.20.5",
+            "--bigip-partition=kubernetes",
+            "--pool-member-type=cluster",
             "--insecure",
             # for secure communication provide the internal ca certificates using config-map with below option and remove insecure parameter
             #"--trusted-certs-cfgmap=<namespace/configmap>",
