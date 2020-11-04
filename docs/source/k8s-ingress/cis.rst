@@ -33,8 +33,5 @@ Container Ingress Service
    kubectl apply -f  cis_deploy.yaml
 
 
-
-
-
 .. toctree::
    :maxdepth: 2
