@@ -48,6 +48,15 @@ The lenght of the list may vary, depending on the amout of scripts/files downloa
     tea-69c99ff568-xmncd                   1/1     Running   0          110m
 
 
+.. admonition:: link service to bigip pool
+
+   The link from the Service to AS3 config map is done via annotations in the service. Check hello_world_as3.yaml:
+
+    cis.f5.com/as3-tenant: AS3_1
+    cis.f5.com/as3-app: A1
+    cis.f5.com/as3-pool: web_pool1
+
+
 Now we'll add a config map declaration.
 
 * Change to folder /home/ubuntu/k8s/config-map::
