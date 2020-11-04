@@ -126,6 +126,16 @@ Compare to:
    :alt: Lab Overview
    :align: center
 
+When finished, delete ingress delclaration::
+
+    ubuntu@kube-master:~/k8s/basic-ingress$ kubectl get ingress
+    NAME             CLASS    HOSTS                                  ADDRESS      PORTS   AGE
+    sharedingress2   <none>   coffee.shared-1.com,tea.shared-1.com   10.1.10.82   80      25s
+
+    ubuntu@kube-master:~/k8s/basic-ingress$ kubectl delete ingress sharedingress2
+    ingress.extensions "sharedingress2" deleted
+
+
 
 
 .. toctree::
