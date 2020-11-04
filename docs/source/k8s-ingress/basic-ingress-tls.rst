@@ -182,7 +182,7 @@ Check what happend with the "Host" port of the definition:
 An LTM Policy was added - and within that policy, we check for the HTTP Host header and route traffic accordingly:
 
 .. image:: ../images/host-routing2.PNG
-   :width: 400
+   :width: 800
    :alt: Lab Overview
    :align: center
 
