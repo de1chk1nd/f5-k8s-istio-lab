@@ -1,7 +1,7 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: singleingress8
+  name: singleingress2
   namespace: default
   annotations:
     # Provide an IP address for the BIG-IP pool you want to handle traffic.
@@ -29,5 +29,5 @@ spec:
         paths:
         - path: /
           backend:
-            serviceName: coffee-svc
+            serviceName: tea-svc
             servicePort: 80

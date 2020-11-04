@@ -97,6 +97,76 @@ Login to the F5 and check if the service was removed.
 Basic TLS Service - ssl profile deployed via secret
 +++++++++++++++++++++++++++++++++++++++++++++++++++
 
+Since the app already exists, we just have to add the cert and deploy an ingress service, pointing to a local secret store, instead of local bigip ssl profile.
+
+* Change folder to cert secret config file(/home/ubuntu/k8s/basic-ingress/certificate)::
+
+   cd /home/ubuntu/k8s/basic-ingress/certificate
+
+* And deploy the Secret::
+
+   ubuntu@kube-master:~/k8s/basic-ingress/certificate$ kubectl apply -f add-cert.yaml
+   secret/ingress-example-secret-tls created
+
+Now we can add the app, again.
+
+* Change to folder /home/ubuntu/k8s/basic-ingress::
+
+   ubuntu@kube-master:~/k8s/basic-ingress/certificate$ cd /home/ubuntu/k8s/basic-ingress
+   ubuntu@kube-master:~/k8s/basic-ingress$
+
+Deploy ingress-tea-tls-2.yaml service::
+
+   ubuntu@kube-master:~/k8s/basic-ingress$ kubectl apply -f ingress-tea-tls-2.yaml
+   ingress.extensions/singleingress8 created
+
+If you have a look into the .yaml file, you'll find some interesting changes::
+
+      spec:
+      tls:
+      - hosts:
+         - mysite.foo.com
+         #Referencing this secret in an Ingress tells the Ingress controller to
+         #secure the channel from the client to the load balancer using TLS
+         secretName: ingress-example-secret-tls
+      rules:
+         - host: www.adv-ingress.com
+            http:
+            # path to Service from URL
+            paths:
+            - path: /
+               backend:
+                  serviceName: coffee-svc
+
+We add a L7 Routing Policy - as well as pointing to a local SSL Cert, instead of a local bigip profile.
+
+.. admonition:: secret vs. local profile
+
+   CIS controller will **always** lookup local secret store, before falling back to a local profile (but this is a configurable setting).
+
+   In this example, CIS controller finds "ingress-example-secret-tls" in the local store and creates neccessary TLS profiles on f5.
+
+   In the previous example, CIS controller couldn't find /Common/clientssl in the local store - and assumes this will be a local bigip p
+
+
+Now check what happened on the bigip:
+
+Virtual Server:
+
+.. image:: ../images/basic-tls-ingress-tea.PNG
+   :width: 400
+   :alt: Lab Overview
+   :align: center
+
+
+Ingress Service created on F5.
+
+Check the SSL Profile:
+
+.. image:: ../images/basic-tls-ingress-tea-cssl2.PNG
+   :width: 400
+   :alt: Lab Overview
+   :align: center
 
 
 
