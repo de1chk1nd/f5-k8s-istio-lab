@@ -79,27 +79,18 @@ Now check if the CRD is applied to the bigip successfully.
 
 Virtual Server:
 
-.. image:: ../images/crd-vs.PNG
+.. image:: ../images/crd-tls-vs.PNG
    :width: 400
    :alt: Lab Overview
    :align: center
 
 
-LTM Policy:
+LTM SSL Profile:
 
-.. image:: ../images/crd-LTMpol.PNG
+.. image:: ../images/crd-tls-cssl.PNG
    :width: 400
    :alt: Lab Overview
    :align: center
-
-
-and Pool-Member:
-
-.. image:: ../images/crd-pool.PNG
-   :width: 400
-   :alt: Lab Overview
-   :align: center
-
 
 
 
