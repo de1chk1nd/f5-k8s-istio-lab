@@ -3,7 +3,8 @@ Kubernetes Training Lab
 
 Welcome to my Lab Guide for integrating F5 Container Ingress Services with k8s and Calico as CNI.
 
-**Purpose:** This lab is for getting familiar and test basic kubernetes ingress services and start working with istio service mesh - from a f5 point of view (bigip CIS & NGINX Ingress).
+**Purpose:** This lab is for getting familiar with-, and test, basic kubernetes ingress services and start working with istio service mesh.
+All from a f5 point of view (bigip CIS).
 
 The lab has following basic set up:
 
@@ -28,36 +29,41 @@ client    10.1.1.9  10.1.10.200  n/a
    :align: center
 
 
+The lab currently runs on:
 
-The lab runs currently on:
-
-* TMOS 15.1
-   * AS3 XYZ
+* TMOS 15.1.1
+   * AS3 3.23.0-5
 
 * Ubuntu 18.04
-   * kubernetes 18.
+   * kubernetes v1.18.10
 
 The infrastructure is set up (VLANs and IPs) and basic kubernetes installation is completed.
+Calico package (incl. calicoctl) is deployed - but not yet configured.
 
 .. warning::
    
-   Since it is important for initilazing the calico sdn, please be aware, that k8s was initialized with *"--pod-network-cidr=192.168.0.0/16"*
+   Since it is important for initilazing the calico sdn, please be aware, that *kubadm init* was initialized with *"--pod-network-cidr=192.168.0.0/16"*
 
 
-From that point on, infrastrucure needs to be initialized (calico service, app deplyoments, services, ...).
+From that point on, infrastrucure needs to be initialized (calico service & bgp, app deplyoments, services, ...).
 
 
 * **Chapter 1** focuses on basic information about the lab, kubernetes, calico and so on.
 
+* **Chapter 2** shows the BGP configuration requried on kubernetes and f5 bigip
 
-* **Chapter 2** finishes the calico installation and basic BGP set up
-   * **Chapter 2.1** shows how to deploy basic kubernetes ingress services and auto-configure the bigip (Contianer Ingress Service - CIS)
-   * **Chapter 2.2** shows how to integrate NGINX Ingress Services and use f5 CIS-NGINX Controller to use f5 big ip and nginx ingress (Project Chimera)
-   * **Chapter 2.3** advance usage of F5 and NGINX Ingress Services
+* **Chapter 3** installs basic ingress services
+
+* **Chapter 4** shows AS3 config map integration
+
+* **Chapter 5** shows the newest feature called *Custom Ressource Definition*
+
+* **Chapter 6** showcases ISTIO
 
 
-* **Chapter 3** installs ISTIO and uses f5 for external facing services
-
+.. warning::
+   
+   Chapter 2 sets up the BGP and is mandatory to succeed in chapter 3 - 5!
 
 
 **Please use the menu on the left, to jump to the desired chapter**
@@ -106,7 +112,7 @@ From that point on, infrastrucure needs to be initialized (calico service, app d
    Introduction <crd/introduction>
    New CIS Instance <crd/crd-cis>
    Import CRD Definition <crd/crd-crd>
-   Create Services <crd/crd-deploy>
+   Create CRD Services <crd/crd-deploy>
 
 .. toctree::
    :numbered:

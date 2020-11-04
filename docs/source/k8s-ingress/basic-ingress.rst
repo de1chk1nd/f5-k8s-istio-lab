@@ -3,7 +3,7 @@ Basic Ingress Services
 
 Now that we created the controller, we can start creating services and ingress services.
 
-First and foremost update to current github repository (if not already done)::
+First, and foremost, **update local github repository** (if not already done in a previous chapter)::
 
   ubuntu@kube-master:~$ /home/ubuntu/update_repo.sh
   A    k8s
@@ -24,7 +24,8 @@ The lenght of the list may vary, depending on the amout of scripts/files downloa
 
    cd /home/ubuntu/k8s/apps
 
-
+|
+|
 Now we install the app. 
 At the moment, we just install a plain web app. the link to the f5 will be done later. Also, we create a service, to make the app accessible.
 

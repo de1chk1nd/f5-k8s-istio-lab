@@ -1,8 +1,8 @@
 ISTIO
 =====
 
-WIP
 
+**WIP**
 
 
 .. toctree::

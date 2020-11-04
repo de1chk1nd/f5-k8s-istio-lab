@@ -1,6 +1,11 @@
 Custom Ressource Definition - Introduction
 ==========================================
 
+CRDs are the newest way to deploy services.
+They just archieved general access - but still are quite new. New features will be added shortly. 
+On the long run, CRDs might replace config maps (felxibility) while keeping a strucured appraoch as in *ingress* service.
+
+
 What is a custom Ressource Definition
 -------------------------------------
 

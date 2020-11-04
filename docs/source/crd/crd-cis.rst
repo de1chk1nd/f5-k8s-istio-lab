@@ -4,9 +4,6 @@ CRD - New CIS instance
 Best is to start with a warning ;)
 
 .. warning::
-   CRDs are, as of 11/04/2020, EA - and are for testing only.
-
-.. warning::
    CRDs require the controller to run in "CRD" mode - so we'll delete the old instance and create a new CIS controller.
 
 First and foremost update to current github repository (if not already done)::

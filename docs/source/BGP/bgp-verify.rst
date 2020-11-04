@@ -31,7 +31,6 @@ Login to :blue:`k8s master (10.1.20.20)` and issue *calicoctl get bgpPeer*::
 BGP Peer F5 is available
 
 
-
 on bigip
 ++++++++
 
@@ -60,7 +59,8 @@ Also check if routes are announced (also in imish shell)::
 
       Gateway of last resort is not set
 
-
+|
+|
 
 Interpretation of bgp Routes
 ++++++++++++++++++++++++++++
@@ -72,16 +72,18 @@ Please remember the BGP Route output::
       B       192.168.180.0/26 [200/0] via 10.1.20.21, internal, 00:00:23
       B       192.168.221.192/26 [200/0] via 10.1.20.20, internal, 00:00:23
 
-We have 3 routes announced via BGP:
+We can see 3 routes announced via BGP:
 
-* 192.168.221.192/26 via 10.1.20.20 :red:`(kubernetes master | 10.1.20.20)`
+* 192.168.221.192/26 via 10.1.20.20 :red:`(kubernetes master)`
 
-* 192.168.180.0/26 via 10.1.20.21 :red:`(kubernetes worker I | 10.1.20.21)`
+* 192.168.180.0/26 via 10.1.20.21 :red:`(kubernetes worker I)`
 
-* 192.168.127.0/26 via 10.1.20.22 :red:`(kubernetes worker II | 10.1.20.22)`
+* 192.168.127.0/26 via 10.1.20.22 :red:`(kubernetes worker II)`
 
-Each k8s node is running a certain amount of pods - these pods have an 192.168.*.* IP assigned.
+Each k8s node is running a certain amount of pods - these pods have an 192.168.*.* IP/subnet assigned.
 
+|
+|
 
 **Calico SDN**
 
@@ -94,10 +96,14 @@ Each k8s node is running a certain amount of pods - these pods have an 192.168.*
 
 Calico SDN is based on routing - more or less.
 
-1. PODs have a default route to their interface
-2. Calico creates tunnel interfaces to *"link"* PODs to the Host Network
-3. To be able to route traffic to specific hosts, local routes are Created
-4. To route to PODs on *"external"* nodes (e.g. worker-I to worker-II), Host needs a route to point to the other worker node
+1. Calico creates tunnel interfaces to *"link"* PODs to the Host Network
+
+2. Within the POD - each PODs has a default route pointing to their (tunnel)interface
+
+3. On host level - to be able to route traffic to specific PODs, local routes are Created
+
+4. To route to PODs on *external* nodes (e.g. worker-I to worker-II), hosts needs to have a route pointing to the nexthop
+
 5. To automate "4", BGP is used (dynamic update of *"external"* routes)
 
 
@@ -157,7 +163,8 @@ Remember - calico creates tunnel interfaces - and routes POD IPs to that Tunnel 
             TX errors 0  dropped 0 overruns 0  carrier 0  collisions 0
 
 
-Finally - test traffic from bigip to the POD IP::
+Now let's test this.
+Issue a ping from bigip to one POD IP::
 
       [root@bigip-1:Active:Standalone] config # ping 192.168.221.198
       PING 192.168.221.198 (192.168.221.198) 56(84) bytes of data.
@@ -168,13 +175,12 @@ Finally - test traffic from bigip to the POD IP::
       ^C
 
 
-Process is as follows
+To sum this up (what happens with that ping):
 
 1. ping to 192.168.221.198
 2. :red:`bigip` looks up routing table and finds the announced bgp route to :blue:`kube-master`
 3. :blue:`kube-master` receives traffic from the f5 - and finds a route to local tunnel interface
 4. return traffic leaving the POD (through tunnel interface), will be sent back to f5 (either because of SNAT on :red:`bigip` or via default route)
-
 
 
 .. toctree::

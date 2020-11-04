@@ -44,7 +44,7 @@ The lenght of the list may vary, depending on the amout of scripts/files downloa
 
     cd /home/ubuntu/k8s/basic-ingress
 
-L7 Routung
+L7 Routing
 ++++++++++
 
 Deploy the shared-ingress-1.yaml service::
@@ -88,7 +88,7 @@ When finished, delete ingress delclaration::
 
 
 
-Host-Routung
+Host-Routing
 ++++++++++++
 
 

@@ -1,7 +1,8 @@
 Container Ingress Service
 =========================
 
-Before we starting and creating services, we need to set up the CIS controller. 
+Before we starting and creating services, we need to set up the CIS controller.
+
 For later use, I'll post the login info, which is required on the controller to be able to login to the bigip.
 
 ========  ========  ==========
@@ -11,7 +12,7 @@ For later use, I'll post the login info, which is required on the controller to 
 ========  ========  ==========
 
 
-First and foremost update to current github repository::
+First, and foremost, **update local github repository** (if not already done in a previous chapter)::
 
   ubuntu@kube-master:~$ /home/ubuntu/update_repo.sh
   A    k8s
@@ -28,20 +29,24 @@ First and foremost update to current github repository::
 
 The lenght of the list may vary, depending on the amout of scripts/files downloaded.
 
-* First change folder to  k8s/calico/CIS/::
+
+* change folder to k8s/calico/CIS/::
 
    cd k8s/calico/CIS/
 
 
+Now we create the login of the BigIP. 
+Since we do not want to store this sensible information in a raw config file, we add the login to a secret.
+To get  to know more about k8s secrets, please go :ref:`here <https://kubernetes.io/docs/concepts/configuration/secret/>`.
 
-Now we create the login of the BigIP. Since we do not want to store this sensible information in a raw config file, we add the login to a secret.
-To know about k8s secrets, please go :ref:`here <https://kubernetes.io/docs/concepts/configuration/secret/>`.
 
 * Create BigIP Login::
    
    kubectl create secret generic bigip-login -n kube-system --from-literal=username=admin --from-literal=password=f5twister!
 
 
+|
+|
 Once this is done, we set up the RBAC. 
 Basically we create a role and bind the role to the controller.
 First we create the Service Account - second we apply a RBAC file, to define what is allowed and what is not allowed.
@@ -54,6 +59,7 @@ First we create the Service Account - second we apply a RBAC file, to define wha
 
    kubectl apply -f  k8s_rbac.yaml
 
+|
 
 Now it is time to start configuring and deplyoing the CIS controller.
 From the CIS yaml file, the main changes are done within the *args* section::
@@ -70,19 +76,21 @@ From the CIS yaml file, the main changes are done within the *args* section::
             "--insecure",
 
 
-When using another CIS template, please change *bigip-url*, *bigip-partition* and, depending the deployment, *pool-member-type*.
-
+When using another CIS template as provided here, please change *bigip-url*, *bigip-partition* and, depending the deployment, *pool-member-type*.
+|
 Other options might be added - like *default-ingress-ip*.
-
+|
 For an overview, please check clouddocs :ref:`here <https://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/v1.11/#controller-configuration-parameters>`.
-
+|
+|
 Finally apply the CIS controller.
 
 * Create a CIS deployment using cis_deploy.yaml as shown below::
 
    kubectl apply -f  cis_deploy.yaml
-
-Finally check, if the controller is running::
+|
+|
+Finally check, if the controller is **running**::
 
       ubuntu@kube-master:~$ kubectl get pods -n kube-system
       NAME                                        READY   STATUS    RESTARTS   AGE

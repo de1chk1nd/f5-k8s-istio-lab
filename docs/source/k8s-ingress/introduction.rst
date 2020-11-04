@@ -1,6 +1,15 @@
 Introduction - Ingress Services
 ===============================
 
+Now we're going to set up basic ingress services.
+
+.. warning::
+   
+   You have to have set up the BGP routing from the previous chapter. If not, bigip will not be able to access the apps (POD IPs).
+
+We'll keep this basic and set up basic http and https service. Please work yourself through, as desired (choose what is interesting).
+
+More example config and an detailed explanation about supported "attributes" (annotations), can be found on clouddocs.
 
 
 .. toctree::
