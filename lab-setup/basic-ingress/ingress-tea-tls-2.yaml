@@ -1,27 +1,33 @@
 apiVersion: extensions/v1beta1
 kind: Ingress
 metadata:
-  name: singleingress2
+  name: singleingress8
   namespace: default
   annotations:
     # Provide an IP address for the BIG-IP pool you want to handle traffic.
     virtual-server.f5.com/ip: "10.1.10.81"
     # Allow/deny TLS connections
-    ingress.kubernetes.io/ssl-redirect: "true"
+    ingress.kubernetes.io/ssl-redirect: "false"
     # Allow/deny HTTP connections
-    ingress.kubernetes.io/allow-http: "false"
+    ingress.kubernetes.io/allow-http: "true"
     # Uncomment below annotation, to attach Server SSL Profile (local SSL profile)
     # virtual-server.f5.com/serverssl: "/Common/serverssl"
     # Custom monitor
     virtual-server.f5.com/health: '[{"path": "/", "send": "HTTP GET /", "interval": 5, "timeout": 10}]'
+
 spec:
   tls:
-    # Specifies an already-configured SSL Profile on BIG-IP that should be
-    # used for this Ingress.
-    # Follows the format "/partition/profile_name".
-    - secretName: /Common/clientssl
-  backend:
-    # The name of a single Kubernetes Service you want to expose to external
-    # traffic using TLS
-    serviceName: coffee-svc
-    servicePort: 80
+  - hosts:
+    - mysite.foo.com
+    #Referencing this secret in an Ingress tells the Ingress controller to
+    #secure the channel from the client to the load balancer using TLS
+    secretName: ingress-example-secret-tls
+  rules:
+    - host: www.adv-ingress.com
+      http:
+      # path to Service from URL
+        paths:
+        - path: /
+          backend:
+            serviceName: coffee-svc
+            servicePort: 80

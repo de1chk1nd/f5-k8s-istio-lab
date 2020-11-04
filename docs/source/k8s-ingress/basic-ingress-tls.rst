@@ -21,6 +21,9 @@ First, we'll add the application.
    service/tea-svc created
 
 
+Basic TLS Service - ssl profile on the bigip
+++++++++++++++++++++++++++++++++++++++++++++
+
 Now we can deploy the ingress service.
 
 * Change to the ingress folder (/home/ubuntu/k8s/basic-ingress)::
@@ -87,6 +90,15 @@ Now we want to delete the ingress service again::
       
       ubuntu@kube-master:~/k8s/basic-ingress$ kubectl delete ingress singleingress2
       ingress.extensions "singleingress2" deleted
+
+Login to the F5 and check if the service was removed.
+
+
+Basic TLS Service - ssl profile deployed via secret
++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+
+
 
 
 
