@@ -78,9 +78,34 @@ Now we can prepare the CRD config.
 As said before - we need to deploy the controller with **--custom-resource-mode=true** argument.
 
 
+* Change folder to /home/ubuntu/k8s/crd/CIS::
+
+   cd /home/ubuntu/k8s/crd/CIS
 
 
+* Deploy new CIS Controller::
 
+   ubuntu@kube-master:~/k8s/crd/CIS$ kubectl apply -f cis_deploy.yaml
+   deployment.apps/k8s-bigip-ctlr-deployment created
+
+* Verify, that the controller is running::
+
+   ubuntu@kube-master:~/k8s/crd/CIS$ kubectl get pods -n kube-system
+   NAME                                         READY   STATUS    RESTARTS   AGE
+   calico-kube-controllers-7567d8d9dd-x7dz9     1/1     Running   2          16h
+   calico-node-2mdp2                            1/1     Running   2          16h
+   calico-node-gmhbl                            1/1     Running   2          16h
+   calico-node-zp9jh                            1/1     Running   2          16h
+   coredns-66bff467f8-fdxkf                     1/1     Running   3          17h
+   coredns-66bff467f8-s54hj                     1/1     Running   3          17h
+   etcd-kube-master                             1/1     Running   3          17h
+   k8s-bigip-ctlr-deployment-7f7c6bc7d8-jwgjl   1/1     Running   0          9s
+   kube-apiserver-kube-master                   1/1     Running   3          17h
+   kube-controller-manager-kube-master          1/1     Running   3          17h
+   kube-proxy-dwzxh                             1/1     Running   3          17h
+   kube-proxy-wc5wz                             1/1     Running   2          16h
+   kube-proxy-x8kp8                             1/1     Running   2          16h
+   kube-scheduler-kube-master   
 
 
 
