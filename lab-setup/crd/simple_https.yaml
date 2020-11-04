@@ -7,7 +7,7 @@
    namespace: default
  spec:
    host: cafe.de1chk1nd.de
-   tlsProfileName: edge-tls.  # --> This will attach reencrypt-tls TLSProfile
+   tlsProfileName: edge-tls  # --> This will attach reencrypt-tls TLSProfile
    virtualServerAddress: "10.1.10.84"
    pools:
    - path: /coffee
