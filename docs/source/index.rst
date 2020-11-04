@@ -104,6 +104,9 @@ From that point on, infrastrucure needs to be initialized (calico service, app d
    :caption: Chapter 5 - Custom Ressource Definition
 
    Introduction <crd/introduction>
+   New CIS Instance <crd/crd-cis>
+   Import CRD Definition <crd/crd-crd>
+   Create Services <crd/crd-deploy>
 
 .. toctree::
    :numbered:
