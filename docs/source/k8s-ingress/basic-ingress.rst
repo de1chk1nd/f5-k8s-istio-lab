@@ -25,6 +25,25 @@ Check configuration on bigip:
 
 Ingress Service created on F5.
 
+Now check F5 Pool / Pool-Member:
+
+.. image:: ../images/before_scale.PNG
+   :width: 400
+   :alt: Lab Overview
+   :align: center
+
+Now scale your application::
+
+    ubuntu@kube-master:~$ kubectl scale --current-replicas=2 --replicas=3 deployment/coffee
+    deployment.apps/coffee scaled
+
+
+.. image:: ../images/after_scale.PNG
+   :width: 400
+   :alt: Lab Overview
+   :align: center
+
+
 .. toctree::
    :numbered:
    :hidden:
