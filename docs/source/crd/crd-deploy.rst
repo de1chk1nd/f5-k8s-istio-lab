@@ -6,6 +6,9 @@ Deploy Apps
     cd /home/ubuntu/k8s/crd
 
 
+Simple HTTP Service
++++++++++++++++++++
+
 * Deploy *simple_http.yaml* Service::
 
     ubuntu@kube-master:~/k8s/crd$ kubectl apply -f simple_http.yaml
@@ -21,7 +24,35 @@ Deploy Apps
 
 Now check if the CRD is applied to the bigip successfully.
 
+Virtual Server:
 
+.. image:: ../images/crd-vs.PNG
+   :width: 400
+   :alt: Lab Overview
+   :align: center
+
+
+LTM Policy:
+
+.. image:: ../images/crd-LTMpol.PNG
+   :width: 400
+   :alt: Lab Overview
+   :align: center
+
+
+and Pool-Member:
+
+.. image:: ../images/crd-pool.PNG
+   :width: 400
+   :alt: Lab Overview
+   :align: center
+
+
+
+Simple HTTPs Service
+++++++++++++++++++++
+
+WIP
  
 
 .. toctree::
