@@ -58,16 +58,21 @@ and Pool-Member:
 Simple HTTPs Service
 ++++++++++++++++++++
 
+* Change folder to /home/ubuntu/k8s/crd::
+
+    cd /home/ubuntu/k8s/crd
+
+
 * Deploy *TLSprofile.yaml* Service::
 
     ubuntu@kube-master:~/k8s/crd$ kubectl apply -f TLSprofile.yaml
+    tlsprofile.cis.f5.com/edge-tls created
 
 
 * Deploy *simple_https.yaml* Service::
 
     ubuntu@kube-master:~/k8s/crd$ kubectl apply -f simple_https.yaml
-
-
+    virtualserver.cis.f5.com/cafe-virtual-server created
 
 
 .. toctree::
