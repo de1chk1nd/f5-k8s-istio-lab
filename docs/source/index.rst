@@ -115,7 +115,6 @@ From that point on, infrastrucure needs to be initialized (calico service & bgp,
    Create CRD Services <crd/crd-deploy>
 
 .. toctree::
-   :numbered:
    :hidden:
    :caption: Chapter 6 - istio
    
