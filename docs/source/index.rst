@@ -1,6 +1,8 @@
 Kubernetes Training Lab
 =======================
 
+**Guide is still work in progress. Most parts are already covered - but more testing and review is required (plus content for the istio lab)**
+
 UDF      : k8s training - calico/CIS/CRD/istio (incl. lab guide)
 github   : https://github.com/de1chk1nd/f5-k8s-istio-lab
 
