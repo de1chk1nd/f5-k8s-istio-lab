@@ -1,6 +1,9 @@
 Kubernetes Training Lab
 =======================
 
+UDF      : k8s training - calico/CIS/CRD/istio (incl. lab guide)
+github   : https://github.com/de1chk1nd/f5-k8s-istio-lab
+
 Welcome to my Lab Guide for integrating F5 Container Ingress Services with k8s and Calico as CNI.
 
 **Purpose:** This lab is for getting familiar with-, and test, basic kubernetes ingress services and start working with istio service mesh.
