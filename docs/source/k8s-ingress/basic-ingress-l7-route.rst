@@ -39,8 +39,38 @@ The lenght of the list may vary, depending on the amout of scripts/files downloa
         coffee   3/3     3            3           11h
         tea      2/2     2            2           56m
 
+* Change folder to /home/ubuntu/k8s/basic-ingress::
+
+    cd /home/ubuntu/k8s/basic-ingress
+
+Deploy the shared-ingress-1.yaml service::
+
+    ubuntu@kube-master:~/k8s/basic-ingress$ kubectl apply -f shared-ingress-1.yaml
+    ingress.extensions/sharedingress1 created
+
+Check the Routing Policy - and compare it with the .yaml config file::
+
+        spec:
+        rules:
+        - host: www.shared-1.com
+            http:
+            paths:
+            - path: /coffee
+                backend:
+                serviceName: coffee-svc
+                servicePort: 80
+            - path: /tea
+                backend:
+                serviceName: tea-svc
+                servicePort: 80
 
 
+Compare to:
+
+.. image:: ../images/host-l7routing-1.PNG
+   :width: 800
+   :alt: Lab Overview
+   :align: center
 
 
 .. toctree::
