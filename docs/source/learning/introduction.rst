@@ -49,6 +49,7 @@ Windows Client
 
 Windows 10 basic OS with Google Chrome.
 
+**When CIS Services are deployed, the tests to access the service can be done from this jump host. Please test manually, and on a case by case base, if requreds
 
 
 .. toctree::
