@@ -12,7 +12,6 @@ Everything important is stored on github:  `github repo <https://github.com/de1c
 Lab related content is stored in the **lab-setup** folder. Detailed explanation will be provided in the labs later on.
 
 
-
 F5 BigIP
 --------
 
@@ -25,6 +24,7 @@ Current installed license supports:
 * APM
 * aWAF
 
+**kubernetes partition was added - this one is requried by the CIS controller**
 
 
 Kubernetes Master & Worker Nodes
@@ -34,7 +34,7 @@ Kubernetes Nodes were installed with ubuntu 18.04 server.
 
 Packet repository and disstribution packages were updated.
 
-Finally current supported docker & kubernetes packages were installed a basic cluster was set up.
+Finally current supported docker & kubernetes packages were installed a basic kubernetes cluster was set up.
 
 
 

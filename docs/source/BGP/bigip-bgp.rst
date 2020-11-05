@@ -12,9 +12,10 @@
 .. role:: blue
 
 
-
 F5 BigIP BGP Set Up
 ===================
+
+**From bigip TMUI (10.1.20.5)**
 
 We will use our self IPs on the internal network. Therefore we need to make sure of the following:
 
@@ -40,8 +41,9 @@ Connect to the BIG-IP GUI on go into Network > Route domain. Click on Route Doma
 
 Click on **Update**
 
+Once this is done, connect via SSH and get into a bash shell.
 
-Once this is done, connect via SSH and get into a bash shell on both bigip (10.1.20.5)
+**From bigip CLI (10.1.20.5)**
 
 Run the following commands::
 
@@ -72,7 +74,6 @@ Run the following commands::
 
    #exit
    end
-
 
 
 .. toctree::

@@ -3,15 +3,6 @@ Calico
 
 This chapter provides some additional information about calico itself
 
-Calico Lab
-----------
-
-To build an own lab, Nicola Mennant wrote a Dev Central post and explained how to set up this kind of lab in your own environment.
-If you can not use UDF, and need a step-by-step introduction to get a basic lab up & running, I recommend to have a look into these posts:
-
-* `F5 & Calico Part I <https://devcentral.f5.com/s/articles/CIS-and-Kubernetes-Part-1-Install-Kubernetes-and-Calico>`_
-* `F5 & Calico Part II <https://devcentral.f5.com/s/articles/CIS-and-Kubernetes-Part-2-Install-F5-Container-ingress-services>`_
-
 
 Calico SDN
 ----------
@@ -46,7 +37,7 @@ Once basic installation ist done, calico default file is installed::
 Check Nodes
 -----------
 
-**From kubernetes master (10.1.10.20)**
+**From kubernetes master (10.1.20.20)**
 
 Check if the nodes are up & ready::
 

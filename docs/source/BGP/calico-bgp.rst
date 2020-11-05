@@ -1,7 +1,7 @@
 Calico BGP Set Up
 =================
 
-Login to kube-master via ssh.
+**From kubernetes master (10.1.20.20)**
 
 First and foremost update to current github repository::
 
@@ -59,7 +59,6 @@ The output should be similar to this::
   >   asNumber: 64512
   > EOF
   Successfully created 1 'BGPPeer' resource(s)
-
 
 
 .. toctree::

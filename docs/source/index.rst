@@ -1,17 +1,18 @@
 Kubernetes Training Lab
 =======================
 
-**Guide is still work in progress. Most parts are already covered - but more testing and review is required (plus content for the istio lab)**
+**Guide is still work in progress.**
+**Most parts are already covered - but more testing and review is required (plus content for the istio lab)**
 
 UDF      : k8s training - calico/CIS/CRD/istio (incl. lab guide)
 github   : https://github.com/de1chk1nd/f5-k8s-istio-lab
 
-Welcome to my Lab Guide for integrating F5 Container Ingress Services with k8s and Calico as CNI.
+Welcome to my Lab Guide for integrating F5 Container Ingress Services in kubernetes (integration into the overlay network via calico).
 
-**Purpose:** This lab is for getting familiar with-, and test, basic kubernetes ingress services and start working with istio service mesh.
+**Purpose:** This lab is for getting familiar with-, and test, basic kubernetes ingress services and to start working with istio service mesh.
 All from a f5 point of view (bigip CIS).
 
-The lab has following basic set up:
+The lab (UDF) has following basic set up:
 
 ========  ========  ===========  ===========
  Device    IP MGMT   IP ext.      IP int.
@@ -23,7 +24,6 @@ worker-2  10.1.1.7  n/a          10.1.20.22
 jumphost  10.1.1.8  n/a          10.1.20.200
 client    10.1.1.9  10.1.10.200  n/a
 ========  ========  ===========  ===========
-
 
 *Since MGMT IP is required by the lab network, but not really used in our example, it will be ignored*
 
@@ -42,16 +42,33 @@ The lab currently runs on:
 * Ubuntu 18.04
    * kubernetes v1.18.10
 
-The infrastructure is set up (VLANs and IPs) and basic kubernetes installation is completed.
+The infrastructure is set up (VLANs and IPs) and basic kubernetes cluster installation is completed.
 Calico package (incl. calicoctl) is deployed - but not yet configured.
+kubernetes partition was created in bigip (required for CIS).
+
 
 .. warning::
    
    Since it is important for initilazing the calico sdn, please be aware, that *kubadm init* was initialized with *"--pod-network-cidr=192.168.0.0/16"*
 
 
-From that point on, infrastrucure needs to be initialized (calico service & bgp, app deplyoments, services, ...).
+If you want to set up the lab locally, you can still use the lab guide. Just prepare a kubernetes cluster and a f5. 
+Just adjust IP Adresses accordingly to meet you local lab.
 
+**Another option** to build a local lab, is to use the installation guide Nicola Mennant wrote on Dev Central.
+Part-1 focuses on the basic infrastrucure - part-2 focuses on the CIS service itself. 
+If you want to stick with this lab here guide, and not the one from Nicolas, you'll jusst need to work yourself thorugh part 1 and than get back to continue with this lab.
+
+* `F5 & Calico Part I <https://devcentral.f5.com/s/articles/CIS-and-Kubernetes-Part-1-Install-Kubernetes-and-Calico>`_
+* `F5 & Calico Part II <https://devcentral.f5.com/s/articles/CIS-and-Kubernetes-Part-2-Install-F5-Container-ingress-services>`_
+
+
+From that point on, the infrastrucure needs to be build, like:
+* Creating/configuring the overlay network
+* Create Apps/Deployments in kubernetes
+* Create the CIS controller
+
+This guide is seperated into several chapters:
 
 * **Chapter 1** focuses on basic information about the lab, kubernetes, calico and so on.
 
