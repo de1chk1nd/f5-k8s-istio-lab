@@ -11,6 +11,7 @@ For later use, I'll post the login info, which is required on the controller to 
  bigip     admin    f5twister!
 ========  ========  ==========
 
+**From kubernetes master (10.1.20.20)**
 
 First, and foremost, **update local github repository** (if not already done in a previous chapter)::
 
