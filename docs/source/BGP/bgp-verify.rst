@@ -12,7 +12,6 @@
 .. role:: blue
 
 
-
 Verify BGP Configuration
 ========================
 
@@ -21,7 +20,9 @@ Now we are going to verify, that the routes are up
 on kubernetes
 +++++++++++++
 
-Login to :blue:`k8s master (10.1.20.20)` and issue *calicoctl get bgpPeer*::
+**From kubernetes master (10.1.20.20)**
+
+Login to :blue:`kubernetes master (10.1.20.20)` and issue *calicoctl get bgpPeer*::
 
       ubuntu@kube-master:~/k8s/calico/calicoctl$ calicoctl get bgpPeer
       NAME                    PEERIP      NODE       ASN
@@ -33,6 +34,8 @@ BGP Peer F5 is available
 
 on bigip
 ++++++++
+
+**From bigip CLI (10.1.20.5)**
 
 Login to imish and check BGP Peering and BGP Routes::
 
@@ -106,6 +109,7 @@ Calico SDN is based on routing - more or less.
 
 5. To automate "4", BGP is used (dynamic update of *"external"* routes)
 
+**From kubernetes-master (10.1.20.20)**
 
 Let's check running PODs to show this for one example::
 
@@ -164,6 +168,9 @@ Remember - calico creates tunnel interfaces - and routes POD IPs to that Tunnel 
 
 
 Now let's test this.
+
+**From bigip TMUI (10.1.20.5)**
+
 Issue a ping from bigip to one POD IP::
 
       [root@bigip-1:Active:Standalone] config # ping 192.168.221.198
