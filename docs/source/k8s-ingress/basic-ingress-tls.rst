@@ -80,6 +80,10 @@ Check the SSL Profile:
    :alt: Lab Overview
    :align: center
 
+.. admonition:: secret vs. local profile
+
+   DELETE the ingress service, as described below!!
+   
 
 Now we want to delete the ingress service again::
 

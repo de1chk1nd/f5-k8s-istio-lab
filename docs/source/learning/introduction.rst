@@ -32,7 +32,7 @@ Kubernetes Master & Worker Nodes
 
 Kubernetes Nodes were installed with ubuntu 18.04 server. 
 
-Packet repository and disstribution packages were updated.
+Packet repository and distribution packages were updated.
 
 Finally current supported docker & kubernetes packages were installed a basic kubernetes cluster was set up.
 
@@ -49,7 +49,7 @@ Windows Client
 
 Windows 10 basic OS with Google Chrome.
 
-**When CIS Services are deployed, the tests to access the service can be done from this jump host. Please test manually, and on a case by case base, if requreds
+**When CIS Services are deployed, the tests to access the service can be done from this jump host. Please test manually, and on a case by case base, if required (tests are not explicitly described in the lab guide)**
 
 
 .. toctree::

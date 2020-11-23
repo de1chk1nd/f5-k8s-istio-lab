@@ -113,7 +113,8 @@ Calico SDN is based on routing - more or less.
 
 Let's check running PODs to show this for one example::
 
-      #kubectl get pods to show running PODs - and use "--all-namespaces" to show PODs on all namespaces
+      # kubectl get pods to show running PODs - and use "--all-namespaces" to show PODs on all namespaces
+      
       ubuntu@kube-master:~/k8s/calico/calicoctl$ kubectl get pods --all-namespaces
       NAMESPACE     NAME                                       READY   STATUS    RESTARTS   AGE
       kube-system   calico-kube-controllers-7567d8d9dd-x7dz9   1/1     Running   1          179m
@@ -149,6 +150,12 @@ Let us take the calico controller as example (since we do not have any apps depl
 
 The Controller hast IP :red:`192.168.221.198`
 According to the BGP Routing, :red:`192.168.221.198` is hosted on kube-master (10.1.20.20).
+
+
+.. warning::
+   
+   Check IP Address accordingly. It might change!! Adjust as required in the following commands!
+
 
 Login to kube-master (10.1.20.20) and check routing table::
 

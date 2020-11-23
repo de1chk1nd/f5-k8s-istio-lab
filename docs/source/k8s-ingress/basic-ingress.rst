@@ -31,7 +31,7 @@ At the moment, we just install a plain web app. the link to the f5 will be done 
 
 * Install Service / App::
 
-    kubectl apply -f k8s/apps/coffee-1.yaml
+    kubectl apply -f /home/ubuntu/k8s/apps/coffee-1.yaml
 
 * And please check if the app is running::
 
@@ -82,7 +82,7 @@ We installed a basic NGINX *coffee* app and make it accessible via port 8080
 Now we can start announcing the service to the bigip. 
 For this we need to create an ingress service - and, with the help of *annotations*, add f5 bigip specific config.
 
-* Change folder to ingress-coffee-1.yaml::
+* Change folder to **basic-ingress****::
 
       ubuntu@kube-master:~$ cd /home/ubuntu/k8s/basic-ingress
       ubuntu@kube-master:~/k8s/basic-ingress$
@@ -90,7 +90,7 @@ For this we need to create an ingress service - and, with the help of *annotatio
 
 * Install Ingress::
 
-    kubectl apply -f k8s/basic-ingress/ingress-coffee-1.yaml
+    kubectl apply -f /home/ubuntu/k8s/basic-ingress/ingress-coffee-1.yaml
 
 
 * And check if ingress service was created::
