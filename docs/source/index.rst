@@ -57,7 +57,7 @@ kubernetes partition was created in bigip (required for CIS).
 If you want to set up the lab locally, you can still use the lab guide. Just prepare a kubernetes cluster and a f5. 
 Just adjust IP Adresses accordingly to meet you local lab.
 
-**Another option** to build a local lab, is to use the installation guide Nicola Mennant wrote on Dev Central.
+**Another option** to build a local lab, is to use the installation guide Nicolas Mennant wrote on Dev Central.
 Part-1 focuses on the basic infrastrucure - part-2 focuses on the CIS service itself. 
 If you want to stick with this lab here guide, and not the one from Nicolas, you'll jusst need to work yourself thorugh part 1 and than get back to continue with this lab.
 
@@ -66,6 +66,7 @@ If you want to stick with this lab here guide, and not the one from Nicolas, you
 
 
 From that point on, the infrastrucure needs to be build, like:
+
 * Creating/configuring the overlay network
 * Create Apps/Deployments in kubernetes
 * Create the CIS controller
