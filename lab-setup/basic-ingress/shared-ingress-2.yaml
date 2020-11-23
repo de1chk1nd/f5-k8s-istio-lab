@@ -9,7 +9,20 @@ metadata:
  # https://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/latest/#supported-ingress-annotations
    virtual-server.f5.com/ip: "10.1.10.82"
    virtual-server.f5.com/http-port: "8080"
-   virtual-server.f5.com/health: '[{"path": "www.app1.com/", "send": "HTTP GET /", "interval": 5, "timeout": 10}]'
+   virtual-server.f5.com/health: |
+      [
+        {
+          "path":     "coffee.shared-1.com/",
+          "send":     "HTTP GET /",
+          "interval": 5,
+          "timeout":  10
+        }, {
+          "path":     "tea.shared-1.com/",
+          "send":     "HTTP GET /",
+          "interval": 5,
+          "timeout":  5
+        }
+      ]
 spec:
   rules:
   - host: coffee.shared-1.com
