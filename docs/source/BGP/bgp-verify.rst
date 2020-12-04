@@ -50,7 +50,7 @@ Check for :red:`BGP state = Established` in the output for each member in the re
       BGP neighbor is 10.1.20.20, remote AS 64512, local AS 64512, internal link
        Member of peer-group calico-k8s for session parameters
         BGP version 4, remote router ID 10.1.20.20
-        `BGP state = Established`, up for 00:00:16
+        BGP state = Established, up for 00:00:16
         Last read 00:00:16, hold time is 90, keepalive interval is 30 seconds
 
 
