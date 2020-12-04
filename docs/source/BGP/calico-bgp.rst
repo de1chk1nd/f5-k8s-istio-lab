@@ -28,21 +28,21 @@ Please run the "update_repo" script::
   /home/ubuntu/update_repo.sh
 
 | 
-| 
 | Output will look like:
 
 ubuntu@kube-master:~$ :red:`/home/ubuntu/update_repo.sh`
-:blue:`A    k8s
-A    k8s/apps
-A    k8s/apps/README.md
-A    k8s/calico
-A    k8s/calico/README.md
-A    k8s/calico/calicoctl
-A    k8s/calico/calicoctl/BGPConfiguration
-A    k8s/calico/calicoctl/BGPPeer
-A    k8s/istio
-A    k8s/istio/README.md
-Exported revision 54.`
+
+| :blue:`A    k8s
+| A    k8s/apps
+| A    k8s/apps/README.md
+| A    k8s/calico
+| A    k8s/calico/README.md
+| A    k8s/calico/calicoctl
+| A    k8s/calico/calicoctl/BGPConfiguration
+| A    k8s/calico/calicoctl/BGPPeer
+| A    k8s/istio
+| A    k8s/istio/README.md
+| Exported revision 54.`
 
 The lenght of the list may vary, depending on the amout of scripts/files downloaded.
 
