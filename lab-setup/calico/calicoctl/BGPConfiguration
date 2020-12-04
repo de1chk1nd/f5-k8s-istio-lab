@@ -1,10 +1,9 @@
-cat << EOF | calicoctl create -f -
- apiVersion: projectcalico.org/v3
- kind: BGPConfiguration
- metadata:
-   name: default
- spec:
-   logSeverityScreen: Info
-   nodeToNodeMeshEnabled: true
-   asNumber: 64512
-EOF
+
+apiVersion: projectcalico.org/v3
+kind: BGPConfiguration
+metadata:
+  name: default
+spec:
+  logSeverityScreen: Info
+  nodeToNodeMeshEnabled: true
+  asNumber: 64512
