@@ -35,7 +35,7 @@ BGP Peer F5 is available
 on bigip
 ++++++++
 
-**From bigip CLI (10.1.20.5)**
+**From bigip CLI (10.1.20.5)**::
 
     # login to imish
     imish
@@ -44,7 +44,7 @@ on bigip
     show ip bgp neighbors
 
 
-Check for :red:`BGP state = Established` in the output for each member in the response::
+Check for :red:`BGP state = Established` in the output for each member in the response.
 
       bigip-1.lab.cloud[0]#sh ip bgp neighbors
       BGP neighbor is 10.1.20.20, remote AS 64512, local AS 64512, internal link
