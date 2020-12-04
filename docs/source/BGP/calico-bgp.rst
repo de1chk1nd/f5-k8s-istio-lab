@@ -67,11 +67,11 @@ See :download:`Example Code on github <https://github.com/de1chk1nd/f5-k8s-istio
 
 The output will be like:
 
-calicoctl create -f /home/ubuntu/k8s/calico/calicoctl/BGPConfiguration
-:red:`Successfully created 1 'BGPConfiguration' resource(s)`
+| calicoctl create -f /home/ubuntu/k8s/calico/calicoctl/BGPConfiguration
+| :red:`Successfully created 1 'BGPConfiguration' resource(s)`
 
-calicoctl create -f /home/ubuntu/k8s/calico/calicoctl/BGPPeer
-:red:`Successfully created 1 'BGPPeer' resource`
+| calicoctl create -f /home/ubuntu/k8s/calico/calicoctl/BGPPeer
+| :red:`Successfully created 1 'BGPPeer' resource`
 
 
 .. toctree::
