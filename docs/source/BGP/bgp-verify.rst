@@ -34,7 +34,7 @@ The output should be similar to this::
       bgppeer-global-bigip1   10.1.20.5   (global)   64512
 
 
-BGP Peer F5 is available
+BGP Peer F5 is available.
 
 
 on bigip
@@ -63,7 +63,7 @@ Also check if routes are announced (also in imish shell)::
 
       sh ip route bgp
       
-Check announced routes and compare it to the k8s master/node IPs.  
+Check announced routes and compare it to the k8s master/node IPs::
       
       B       192.168.127.0/26 [200/0] via 10.1.20.22, internal, 00:00:23
       B       192.168.180.0/26 [200/0] via 10.1.20.21, internal, 00:00:23
@@ -71,7 +71,6 @@ Check announced routes and compare it to the k8s master/node IPs.
 
       Gateway of last resort is not set
 
-|
 |
 
 Interpretation of bgp Routes
@@ -94,7 +93,6 @@ We can see 3 routes announced via BGP:
 
 Each k8s node is running a certain amount of pods - these pods have an 192.168.*.* IP/subnet assigned.
 
-|
 |
 
 **Calico SDN**
@@ -123,8 +121,7 @@ Calico SDN is based on routing - more or less.
 Let's check running PODs to show this for one example::
 
       # kubectl get pods to show running PODs - and use "--all-namespaces" to show PODs on all namespaces
-      
-      ubuntu@kube-master:~/k8s/calico/calicoctl$ kubectl get pods --all-namespaces
+      kubectl get pods --all-namespaces
       NAMESPACE     NAME                                       READY   STATUS    RESTARTS   AGE
       kube-system   calico-kube-controllers-7567d8d9dd-x7dz9   1/1     Running   1          179m
       kube-system   calico-node-2mdp2                          1/1     Running   1          178m
@@ -143,7 +140,8 @@ Let's check running PODs to show this for one example::
 
 Let us take the calico controller as example (since we do not have any apps deployed, yet)::
 
-      ubuntu@kube-master:~/k8s/calico/calicoctl$ kubectl describe pod calico-kube-controllers-7567d8d9dd-x7dz9 -n kube-system
+      # get detailed info for POD 'calico-kube-controllers-7567d8d9dd-x7dz9'
+      kubectl describe pod calico-kube-controllers-7567d8d9dd-x7dz9 -n kube-system
       Name:                 calico-kube-controllers-7567d8d9dd-x7dz9
       Namespace:            kube-system
       Priority:             2000000000
@@ -157,9 +155,8 @@ Let us take the calico controller as example (since we do not have any apps depl
       Status:               Running
       IP:                   192.168.221.198
 
-The Controller hast IP :red:`192.168.221.198`
-According to the BGP Routing, :red:`192.168.221.198` is hosted on kube-master (10.1.20.20).
-
+| The Controller hast IP :red:`192.168.221.198`
+| According to the BGP Routing, :red:`192.168.221.198` is hosted on kube-master (10.1.20.20).
 
 .. warning::
    
@@ -168,7 +165,8 @@ According to the BGP Routing, :red:`192.168.221.198` is hosted on kube-master (1
 
 Login to kube-master (10.1.20.20) and check routing table::
 
-      ubuntu@kube-master:~/k8s/calico/calicoctl$ netstat -rn | grep 192.168.221.198
+      # show local routes via 'netstat'
+      netstat -rn | grep 192.168.221.198
       192.168.221.198 0.0.0.0         255.255.255.255 UH        0 0          0 cali430463d79fe
 
 Remember - calico creates tunnel interfaces - and routes POD IPs to that Tunnel interface::
@@ -197,6 +195,9 @@ Issue a ping from bigip to one POD IP::
       64 bytes from 192.168.221.198: icmp_seq=4 ttl=63 time=0.718 ms
       ^C
 
+
+Summary
++++++++
 
 To sum this up (what happens with that ping):
 
