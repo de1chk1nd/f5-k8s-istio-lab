@@ -28,8 +28,8 @@ Please run the "update_repo" script::
   /home/ubuntu/update_repo.sh
 
 | 
-|
-|Output will look like:
+| 
+| Output will look like:
 
 ubuntu@kube-master:~$ :red:`/home/ubuntu/update_repo.sh`
 :blue:`A    k8s
@@ -50,18 +50,16 @@ The lenght of the list may vary, depending on the amout of scripts/files downloa
 Start BGP Set Up
 ++++++++++++++++
 
-You need to apply the BGP config from *BGPConfiguration* and also *BGPPeer* to set up the BGP config in k8s.
+You need to apply the BGP config from *BGPConfiguration* and also *BGPPeer* to set up the BGP config in k8s::
 
-* change folder to /home/ubuntu/k8s/calico/calicoctl::
+  # change folder to /home/ubuntu/k8s/calico/calicoctl::
+  cd /home/ubuntu/k8s/calico/calicoctl
+
+  # copy & paste the config from BGPConfiguration into the CLI
+  cat BGPConfiguration
    
-   cd /home/ubuntu/k8s/calico/calicoctl
-
-
-* copy & paste the config from BGPConfiguration into the CLI
-   cat BGPConfiguration
-   
-   #copy & paste the config from BGPPeer into the CLI
-   cat BGPPeer
+  # copy & paste the config from BGPPeer into the CLI
+  cat BGPPeer
 
 See :download:`Example Code on github <https://github.com/de1chk1nd/f5-k8s-istio-lab/tree/main/lab-setup/calico/calicoctl>`
 
