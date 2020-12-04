@@ -41,7 +41,7 @@ Please run the "update_repo" script::
 |  A    k8s/calico/calicoctl/BGPPeer
 |  A    k8s/istio
 |  A    k8s/istio/README.md
-| Exported revision 54.`
+| Exported revision 54.
 
 The lenght of the list may vary, depending on the amout of scripts/files downloaded.
 
@@ -51,7 +51,7 @@ Start BGP Set Up
 
 You need to apply the BGP config from *BGPConfiguration* and also *BGPPeer* to set up the BGP config in k8s::
 
-  # change folder to /home/ubuntu/k8s/calico/calicoctl::
+  # change folder to /home/ubuntu/k8s/calico/calicoctl
   cd /home/ubuntu/k8s/calico/calicoctl
 
 You can check the local config files via "ls" and "cat".
@@ -65,14 +65,13 @@ When finished, deplyo the BGP configuration::
 
 See :download:`Example Code on github <https://github.com/de1chk1nd/f5-k8s-istio-lab/tree/main/lab-setup/calico/calicoctl>`
 
+The output will be like:
 
-The output should be similar to this::
+calicoctl create -f /home/ubuntu/k8s/calico/calicoctl/BGPConfiguration
+:red:`Successfully created 1 'BGPConfiguration' resource(s)`
 
-  calicoctl create -f /home/ubuntu/k8s/calico/calicoctl/BGPConfiguration
-  Successfully created 1 'BGPConfiguration' resource(s)
-
-  calicoctl create -f /home/ubuntu/k8s/calico/calicoctl/BGPPeer
-  Successfully created 1 'BGPPeer' resource
+calicoctl create -f /home/ubuntu/k8s/calico/calicoctl/BGPPeer
+:red:`Successfully created 1 'BGPPeer' resource`
 
 
 .. toctree::
