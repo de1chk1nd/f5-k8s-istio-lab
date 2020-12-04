@@ -68,28 +68,12 @@ See :download:`Example Code on github <https://github.com/de1chk1nd/f5-k8s-istio
 
 The output should be similar to this::
 
-  ubuntu@kube-master:~$ cat << EOF | calicoctl create -f -
-  >  apiVersion: projectcalico.org/v3
-  >  kind: BGPConfiguration
-  >  metadata:
-  >    name: default
-  >  spec:
-  >    logSeverityScreen: Info
-  >    nodeToNodeMeshEnabled: true
-  >    asNumber: 64512
-  > EOF
-  Successfully created 1 'BGPConfiguration' resource(s)
 
-  ubuntu@kube-master:~$ cat << EOF | calicoctl create -f -
-  > apiVersion: projectcalico.org/v3
-  > kind: BGPPeer
-  > metadata:
-  >   name: bgppeer-global-bigip1
-  > spec:
-  >   peerIP: 10.1.20.5
-  >   asNumber: 64512
-  > EOF
-  Successfully created 1 'BGPPeer' resource(s)
+ubuntu@kube-master:~/k8s/calico/calicoctl$ calicoctl create -f /home/ubuntu/k8s/calico/calicoctl/BGPConfiguration
+Successfully created 1 'BGPConfiguration' resource(s)
+
+ubuntu@kube-master:~/k8s/calico/calicoctl$ calicoctl create -f /home/ubuntu/k8s/calico/calicoctl/BGPPeer
+Successfully created 1 'BGPPeer' resource
 
 
 .. toctree::
