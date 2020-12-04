@@ -68,10 +68,10 @@ See :download:`Example Code on github <https://github.com/de1chk1nd/f5-k8s-istio
 
 The output should be similar to this::
 
-  ubuntu@kube-master:~/k8s/calico/calicoctl$ calicoctl create -f /home/ubuntu/k8s/calico/calicoctl/BGPConfiguration
+  calicoctl create -f /home/ubuntu/k8s/calico/calicoctl/BGPConfiguration
   Successfully created 1 'BGPConfiguration' resource(s)
 
-  ubuntu@kube-master:~/k8s/calico/calicoctl$ calicoctl create -f /home/ubuntu/k8s/calico/calicoctl/BGPPeer
+  calicoctl create -f /home/ubuntu/k8s/calico/calicoctl/BGPPeer
   Successfully created 1 'BGPPeer' resource
 
 
