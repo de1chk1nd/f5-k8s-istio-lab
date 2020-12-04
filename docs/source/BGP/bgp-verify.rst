@@ -24,7 +24,12 @@ on kubernetes
 
 Login to :blue:`kubernetes master (10.1.20.20)` and issue *calicoctl get bgpPeer*::
 
+      # Check BGP Peers via calicoctl 
       calicoctl get bgpPeer
+      
+
+The output should be similar to this::     
+      
       NAME                    PEERIP      NODE       ASN
       bgppeer-global-bigip1   10.1.20.5   (global)   64512
 
