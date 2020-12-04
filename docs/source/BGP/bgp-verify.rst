@@ -122,6 +122,8 @@ Let's check running PODs to show this for one example::
 
       # kubectl get pods to show running PODs - and use "--all-namespaces" to show PODs on all namespaces
       kubectl get pods --all-namespaces
+      
+      
       NAMESPACE     NAME                                       READY   STATUS    RESTARTS   AGE
       kube-system   calico-kube-controllers-7567d8d9dd-x7dz9   1/1     Running   1          179m
       kube-system   calico-node-2mdp2                          1/1     Running   1          178m
@@ -142,6 +144,8 @@ Let us take the calico controller as example (since we do not have any apps depl
 
       # get detailed info for POD 'calico-kube-controllers-7567d8d9dd-x7dz9'
       kubectl describe pod calico-kube-controllers-7567d8d9dd-x7dz9 -n kube-system
+      
+      
       Name:                 calico-kube-controllers-7567d8d9dd-x7dz9
       Namespace:            kube-system
       Priority:             2000000000
@@ -167,6 +171,8 @@ Login to kube-master (10.1.20.20) and check routing table::
 
       # show local routes via 'netstat'
       netstat -rn | grep 192.168.221.198
+      
+      
       192.168.221.198 0.0.0.0         255.255.255.255 UH        0 0          0 cali430463d79fe
 
 Remember - calico creates tunnel interfaces - and routes POD IPs to that Tunnel interface::
@@ -187,7 +193,10 @@ Now let's test this.
 
 Issue a ping from bigip to one POD IP::
 
-      [root@bigip-1:Active:Standalone] config # ping 192.168.221.198
+      # From F5 BigIP PING POD IP
+      ping 192.168.221.198
+      
+      
       PING 192.168.221.198 (192.168.221.198) 56(84) bytes of data.
       64 bytes from 192.168.221.198: icmp_seq=1 ttl=63 time=0.885 ms
       64 bytes from 192.168.221.198: icmp_seq=2 ttl=63 time=0.805 ms
