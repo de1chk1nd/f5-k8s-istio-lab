@@ -56,7 +56,10 @@ Check for :red:`BGP state = Established` in the output for each member in the re
 
 Also check if routes are announced (also in imish shell)::
 
-      bigip-1.lab.cloud[0]#sh ip route bgp
+      sh ip route bgp
+      
+Check announced routes and compare it to the k8s master/node IPs.  
+      
       B       192.168.127.0/26 [200/0] via 10.1.20.22, internal, 00:00:23
       B       192.168.180.0/26 [200/0] via 10.1.20.21, internal, 00:00:23
       B       192.168.221.192/26 [200/0] via 10.1.20.20, internal, 00:00:23
