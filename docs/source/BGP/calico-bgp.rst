@@ -50,12 +50,14 @@ The lenght of the list may vary, depending on the amout of scripts/files downloa
 Start BGP Set Up
 ++++++++++++++++
 
-You need to apply the BGP config from *BGPConfiguration* and also *BGPPeer* to set up the BGP config in k8s::
+You need to apply the BGP config from *BGPConfiguration* and also *BGPPeer* to set up the BGP config in k8s.
 
-   #change folder to /home/ubuntu/k8s/calico/calicoctl
+* change folder to /home/ubuntu/k8s/calico/calicoctl::
+   
    cd /home/ubuntu/k8s/calico/calicoctl
 
-   #copy & paste the config from BGPConfiguration into the CLI
+
+* copy & paste the config from BGPConfiguration into the CLI
    cat BGPConfiguration
    
    #copy & paste the config from BGPPeer into the CLI
