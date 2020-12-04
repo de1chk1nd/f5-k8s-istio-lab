@@ -24,7 +24,7 @@ on kubernetes
 
 Login to :blue:`kubernetes master (10.1.20.20)` and issue *calicoctl get bgpPeer*::
 
-      ubuntu@kube-master:~/k8s/calico/calicoctl$ calicoctl get bgpPeer
+      calicoctl get bgpPeer
       NAME                    PEERIP      NODE       ASN
       bgppeer-global-bigip1   10.1.20.5   (global)   64512
 
@@ -37,9 +37,10 @@ on bigip
 
 **From bigip CLI (10.1.20.5)**
 
-Login to imish and check BGP Peering and BGP Routes::
-
+    # login to imish
     imish
+
+    # show bgp peerings (state)
     show ip bgp neighbors
 
 
@@ -49,7 +50,7 @@ Check for :red:`BGP state = Established` in the output for each member in the re
       BGP neighbor is 10.1.20.20, remote AS 64512, local AS 64512, internal link
        Member of peer-group calico-k8s for session parameters
         BGP version 4, remote router ID 10.1.20.20
-        BGP state = Established, up for 00:00:16
+        :red:`BGP state = Established`, up for 00:00:16
         Last read 00:00:16, hold time is 90, keepalive interval is 30 seconds
 
 
