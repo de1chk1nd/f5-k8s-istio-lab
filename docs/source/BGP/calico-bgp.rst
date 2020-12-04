@@ -55,11 +55,14 @@ You need to apply the BGP config from *BGPConfiguration* and also *BGPPeer* to s
   # change folder to /home/ubuntu/k8s/calico/calicoctl::
   cd /home/ubuntu/k8s/calico/calicoctl
 
-  # copy & paste the config from BGPConfiguration into the CLI
-  cat BGPConfiguration
+You can check the local config files via "ls" and "cat".
+When finished, deplyo the BGP configuration::
+
+  # Deploy BGP Config
+  calicoctl create -f /home/ubuntu/k8s/calico/calicoctl/BGPConfiguration
    
-  # copy & paste the config from BGPPeer into the CLI
-  cat BGPPeer
+  # Deploy BGP- :red:`Peer Configuration`
+  calicoctl create -f /home/ubuntu/k8s/calico/calicoctl/BGPPeer
 
 See :download:`Example Code on github <https://github.com/de1chk1nd/f5-k8s-istio-lab/tree/main/lab-setup/calico/calicoctl>`
 
