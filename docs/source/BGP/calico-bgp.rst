@@ -31,7 +31,6 @@ Please run the "update_repo" script::
 | Output will look like:
 
 ubuntu@kube-master:~$ :red:`/home/ubuntu/update_repo.sh`
-
 :blue:`A    k8s
 | A    k8s/apps
 | A    k8s/apps/README.md
