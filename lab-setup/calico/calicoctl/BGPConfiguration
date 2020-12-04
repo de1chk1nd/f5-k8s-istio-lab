@@ -1,4 +1,3 @@
-
 apiVersion: projectcalico.org/v3
 kind: BGPConfiguration
 metadata:
