@@ -14,7 +14,7 @@
    resources: ["secrets"]
    verbs: ["get", "list", "watch"]
  - apiGroups: ["cis.f5.com"]
-   resources: ["virtualservers", "tlsprofiles", "transportservers"]
+   resources: ["virtualservers", "tlsprofiles", "transportservers", "externaldnss"]
    verbs: ["get", "list", "watch", "update"]
 
 ---
