@@ -1,0 +1,19 @@
+imish
+
+enable
+
+config terminal
+
+router bgp 64512
+
+neighbor calico-k8s peer-group
+
+neighbor calico-k8s remote-as 64512
+
+neighbor 10.1.20.20 peer-group calico-k8s
+neighbor 10.1.20.21 peer-group calico-k8s
+neighbor 10.1.20.22 peer-group calico-k8s
+
+write
+
+end
