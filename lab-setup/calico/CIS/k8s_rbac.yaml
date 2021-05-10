@@ -24,6 +24,7 @@ rules:
     resources: ["secrets"]
     resourceNames: ["bigip-login"]
     verbs: ["get", "list", "watch"]
+
 ---
 
 kind: ClusterRoleBinding
