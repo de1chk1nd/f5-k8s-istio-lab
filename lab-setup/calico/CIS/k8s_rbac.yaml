@@ -12,12 +12,13 @@
    verbs: ["get", "list", "watch", "update", "create", "patch"]
  - apiGroups: ["", "extensions"]
    resources: ["secrets"]
+   resourceNames: ["bigip-login"]
    verbs: ["get", "list", "watch"]
  - apiGroups: ["cis.f5.com"]
-   resources: ["virtualservers", "tlsprofiles", "transportservers", "externaldnss"]
+   resources: ["virtualservers", "tlsprofiles", "transportservers", "ingresslinks", "externaldnss"]
    verbs: ["get", "list", "watch", "update"]
 
----
+ ---
 
  kind: ClusterRoleBinding
  apiVersion: rbac.authorization.k8s.io/v1
