@@ -22,7 +22,7 @@ rules:
     verbs: ["get", "list", "watch", "update", "create", "patch"]
   - apiGroups: ["", "extensions"]
     resources: ["secrets"]
-    resourceNames: ["bigip-login"]
+    resourceNames: ["bigip-login", "cert-client", "cert-server"]
     verbs: ["get", "list", "watch"]
 
 ---
