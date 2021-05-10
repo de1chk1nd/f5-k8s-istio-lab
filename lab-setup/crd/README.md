@@ -16,4 +16,60 @@ kubectl apply -f  /home/ubuntu/k8s/crd/CIS/k8s_rbac.yaml
 
 kubectl create -f /home/ubuntu/k8s/crd/CIS/customresourcedefinitions.yaml -n kube-system
 
-kubectl apply -f  /home/ubuntu/k8s/crd/CIS/cis_deploy.yaml
+Either (ClusterIP -> Overlay  Network w calico),
+
+a) kubectl apply -f  /home/ubuntu/k8s/crd/CIS/cis_deploy.yaml
+
+or (NodePort -> NodePort mode),
+
+b) kubectl apply -f  /home/ubuntu/k8s/crd/CIS/cis_deploy-nodeport.yaml
+
+
+# Deploy Apps
+
+Either (ClusterIP -> Overlay  Network w calico),
+
+kubectl apply -f  /home/ubuntu/k8s/apps/coffee-1.yaml
+kubectl apply -f  /home/ubuntu/k8s/apps/tea-1.yaml
+
+or (NodePort -> NodePort mode),
+
+kubectl apply -f  /home/ubuntu/k8s/apps/coffee-1-nodeport.yaml
+kubectl apply -f  /home/ubuntu/k8s/apps/tea-1-nodeport.yaml
+
+
+# CRD Deployment
+
+Install  certificates:
+======================
+
+kubectl apply -f /home/ubuntu/k8s/crd/cert-client.yaml
+kubectl apply -f /home/ubuntu/k8s/crd/cert-server.yaml
+
+Deploy TLS Profile:
+===================
+
+Either (ClusterIP -> Overlay  Network w calico),
+
+EDGE: t.b.d.
+Re-Encrypt: t.b.d.
+
+or (NodePort -> NodePort mode),
+
+EDGE:
+kubectl apply -f /home/ubuntu/k8s/crd/TLSprofile-edge.yaml
+
+Re-Encrypt:
+kubectl apply -f /home/ubuntu/k8s/crd/TLSprofile-reencrypt.yaml
+
+
+Deploy VirtualServer:
+=====================
+
+Either (ClusterIP -> Overlay  Network w calico),
+t.b.d.
+
+or (NodePort -> NodePort mode),
+kubectl apply -f /home/ubuntu/k8s/crd/simple_https-reencrypt.yaml
+
+
