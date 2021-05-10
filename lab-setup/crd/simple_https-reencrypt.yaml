@@ -1,0 +1,30 @@
+ apiVersion: cis.f5.com/v1
+ kind: VirtualServer
+ metadata:
+   name: cafe-virtual-server
+   labels:
+     f5cr: "true"
+   namespace: default
+ spec:
+   host: cafe.de1chk1nd.de
+   tlsProfileName: reencrypt-tls  # --> This will attach reencrypt-tls TLSProfile
+   virtualServerAddress: "10.1.10.84"
+   pools:
+   - path: /coffee
+     service: coffee-svc
+     servicePort: 80
+     monitor:
+       type: http
+       send: “GET /rn”
+       recv: ""
+       interval: 10
+       timeout: 10
+   - path: /tea
+     service: tea-svc
+     servicePort: 80
+     monitor:
+       type: http
+       send: “GET /rn”
+       recv: ""
+       interval: 10
+       timeout: 10
