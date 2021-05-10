@@ -12,6 +12,8 @@ kubectl create secret generic bigip-login -n kube-system --from-literal=username
 
 kubectl create serviceaccount bigip-ctlr -n kube-system
 
-kubectl apply -f  /home/ubuntu/k8s/calico/CIS/k8s_rbac.yaml
+kubectl apply -f  /home/ubuntu/k8s/crd/CIS/k8s_rbac.yaml
 
-kubectl apply -f  /home/ubuntu/k8s/calico/CIS/cis_deploy.yaml
+kubectl create -f /home/ubuntu/k8s/crd/CIS/customresourcedefinitions.yaml -n kube-system
+
+kubectl apply -f  /home/ubuntu/k8s/crd/CIS/cis_deploy.yaml
