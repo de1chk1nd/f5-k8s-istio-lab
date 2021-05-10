@@ -6,7 +6,7 @@
      f5cr: "true"
  spec:
    tls:
-     termination: edge
+     termination: reencrypt
      clientSSL: cert-client
      serverSSL: cert-server
      reference: secret             # --> reference profiles created in BIG-IP by User
