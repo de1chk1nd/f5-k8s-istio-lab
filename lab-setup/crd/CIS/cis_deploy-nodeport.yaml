@@ -1,57 +1,53 @@
-apiVersion: extensions/v1beta1
-  kind: Deployment
-  metadata:
-    name: f5-server
-    namespace: kube-system
-  spec:
-    replicas: 1
-    template:
-      metadata:
-        name: k8s-bigip-ctlr
-        labels:
-          app: k8s-bigip-ctlr
-      spec:
-        # Name of the Service Account bound to a Cluster Role with the required
-        # permissions
-        serviceAccountName: bigip-ctlr
-        containers:
-          - name: k8s-bigip-ctlr
-            image: f5networks/k8s-bigip-ctlr:latest
-            env:
-              - name: BIGIP_USERNAME
-                valueFrom:
-                  secretKeyRef:
-                    # Replace with the name of the Secret containing your login
-                    # credentials
-                    name: bigip-login
-                    key: username
-              - name: BIGIP_PASSWORD
-                valueFrom:
-                  secretKeyRef:
-                    # Replace with the name of the Secret containing your login
-                    # credentials
-                    name: bigip-login
-                    key: password
-            command: ["/app/bin/k8s-bigip-ctlr"]
-            args: [
-              "--bigip-username=$(BIGIP_USERNAME)",
-              "--bigip-password=$(BIGIP_PASSWORD)",
-              # Replace with the IP address or hostname of your BIG-IP device
-              "--bigip-url=10.10.10.20",
-              # Replace with the name of the BIG-IP partition you want to manage
-              "--bigip-partition=openshift",
-              # Replace with service type - cluster or nodeport
-              "--pool-member-type=nodeport",
-              # set the namespace for CIS to watch.
-              # "--namespace=f5demo",
-              # Logging level
-              "--log-level=DEBUG",
-              "--log-as3-response=true",
-              # Self-signed cert
-              "--insecure=true"
-              # Custom Resource Mode
-              "--custom-resource-mode=true"
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: k8s-bigip-ctlr-deployment
+  namespace: kube-system
+spec:
+# DO NOT INCREASE REPLICA COUNT
+  replicas: 1
+  selector:
+    matchLabels:
+      app: k8s-bigip-ctlr-deployment
+  template:
+    metadata:
+      labels:
+        app: k8s-bigip-ctlr-deployment
+    spec:
+      # Name of the Service Account bound to a Cluster Role with the required
+      # permissions
+      containers:
+        - name: k8s-bigip-ctlr
+          image: "f5networks/k8s-bigip-ctlr"
+          env:
+            - name: BIGIP_USERNAME
+              valueFrom:
+                secretKeyRef:
+                # Replace with the name of the Secret containing your login
+                # credentials
+                  name: bigip-login
+                  key: username
+            - name: BIGIP_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                # Replace with the name of the Secret containing your login
+                # credentials
+                  name: bigip-login
+                  key: password
+          command: ["/app/bin/k8s-bigip-ctlr"]
+          args: [
+            # See the k8s-bigip-ctlr documentation for information about
+            # all config options
+            # https://clouddocs.f5.com/products/connectors/k8s-bigip-ctlr/latest
+            "--bigip-username=$(BIGIP_USERNAME)",
+            "--bigip-password=$(BIGIP_PASSWORD)",
+            "--bigip-url=10.1.20.5",
+            "--bigip-partition=kubernetes",
+            "--pool-member-type=cluster",
+            "--insecure",
+            "--custom-resource-mode=true",
+            # for secure communication provide the internal ca certificates using config-map with below option and remove insecure parameter
+            #"--trusted-certs-cfgmap=<namespace/configmap>",
             ]
-        imagePullSecrets:
-          - name: f5-docker-images
-          - name: bigip-login
+      serviceAccount: bigip-ctlr
+      serviceAccountName: bigip-ctlr
