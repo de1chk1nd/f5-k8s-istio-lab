@@ -141,6 +141,12 @@ This guide is seperated into several chapters:
 
 .. toctree::
    :hidden:
-   :caption: Chapter 6 - istio
+   :caption: Chapter 6 - Service LoadBalancer & IPAM
+
+   Introduction <crd-LBipam/introduction>
+
+.. toctree::
+   :hidden:
+   :caption: Chapter 7 - istio
    
    Introduction <istio/introduction>
