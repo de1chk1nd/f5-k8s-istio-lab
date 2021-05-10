@@ -37,15 +37,15 @@ apiVersion: extensions/v1beta1
               "--bigip-username=$(BIGIP_USERNAME)",
               "--bigip-password=$(BIGIP_PASSWORD)",
               # Replace with the IP address or hostname of your BIG-IP device
-              "--bigip-url=10.1.20.5",
+              "--bigip-url=10.10.10.20",
               # Replace with the name of the BIG-IP partition you want to manage
-              "--bigip-partition=kubernetes",
+              "--bigip-partition=openshift",
               # Replace with service type - cluster or nodeport
               "--pool-member-type=nodeport",
               # set the namespace for CIS to watch.
               # "--namespace=f5demo",
               # Logging level
-              # "--log-level=DEBUG",
+              "--log-level=DEBUG",
               "--log-as3-response=true",
               # Self-signed cert
               "--insecure=true"
