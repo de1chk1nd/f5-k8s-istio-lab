@@ -3,16 +3,16 @@ CRD Import
 
 Once the controller is installed, we import the CRD definition.
 
-Change folder to /home/ubuntu/k8s/crd::
+Change folder to /home/ubuntu/k8s/crd/CIS::
 
-   cd /home/ubuntu/k8s/crd
+   cd /home/ubuntu/k8s/crd/CIS
 
 
 Take a look at the config file *customresourcedefinitions.yaml*. 
 
 ...and deploy the config::
 
-   ubuntu@kube-master:~/k8s/crd$ kubectl apply -f customresourcedefinitions.yaml
+   ubuntu@kube-master:~/k8s/crd/CIS$ kubectl apply -f customresourcedefinitions.yaml
    customresourcedefinition.apiextensions.k8s.io/virtualservers.cis.f5.com created
    customresourcedefinition.apiextensions.k8s.io/tlsprofiles.cis.f5.com created
    customresourcedefinition.apiextensions.k8s.io/transportservers.cis.f5.com created
