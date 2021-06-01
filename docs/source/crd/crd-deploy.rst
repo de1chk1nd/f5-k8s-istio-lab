@@ -69,9 +69,9 @@ Simple HTTPs Service
 
 To set up TLS Services, we need to deploy a TLS service before.
 
-* Deploy *TLSprofile.yaml* Service::
+* Deploy *TLSprofile-edge.yaml* Service::
 
-    ubuntu@kube-master:~/k8s/crd$ kubectl apply -f TLSprofile.yaml
+    ubuntu@kube-master:~/k8s/crd$ kubectl apply -f TLSprofile-edge.yaml
     tlsprofile.cis.f5.com/edge-tls created
 
 |
@@ -80,7 +80,7 @@ Once done, we can add the service itself.
 
 * Deploy *simple_https.yaml* Service::
 
-    ubuntu@kube-master:~/k8s/crd$ kubectl apply -f simple_https.yaml
+    ubuntu@kube-master:~/k8s/crd$ kubectl apply -f simple_https-edge.yaml
     virtualserver.cis.f5.com/cafe-virtual-server created
 
 
